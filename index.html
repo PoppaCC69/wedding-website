@@ -121,6 +121,10 @@ textarea{resize:vertical;}
 .faq-plus.open{transform:rotate(45deg);}
 footer{background:var(--cream);padding:56px 20px;text-align:center;position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+.cd-block{text-align:center;min-width:52px;}
+.cd-num{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,6vw,40px);color:var(--blue);line-height:1;}
+.cd-label{font-family:'Jost',sans-serif;font-weight:300;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-top:4px;}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--blue-light);line-height:1;padding-top:2px;align-self:flex-start;}
 .ft-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:28px;color:var(--blue);margin-bottom:10px;}
 .ft-date{font-family:'Jost',sans-serif;font-weight:300;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--light);}
 .ft-giddy{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--blue);margin-top:20px;}
@@ -182,6 +186,23 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     <div class="hero-rule-line"></div>
   </div>
   <p class="hero-venue-text">The Organ Factory &nbsp;·&nbsp; London E2</p>
+  <div id="countdown" style="display:flex;gap:20px;margin-bottom:28px;justify-content:center;"></div>
+  <div id="countdown" style="display:flex;gap:20px;margin-bottom:28px;justify-content:center;">
+    <div style="text-align:center;">
+      <div id="cd-days" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(32px,7vw,52px);font-weight:500;color:var(--blue);line-height:1;">—</div>
+      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-top:4px;">Days</div>
+    </div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,6vw,44px);color:var(--blue-light);line-height:1.2;align-self:flex-start;margin-top:4px;">·</div>
+    <div style="text-align:center;">
+      <div id="cd-hours" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(32px,7vw,52px);font-weight:500;color:var(--blue);line-height:1;">—</div>
+      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-top:4px;">Hours</div>
+    </div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,6vw,44px);color:var(--blue-light);line-height:1.2;align-self:flex-start;margin-top:4px;">·</div>
+    <div style="text-align:center;">
+      <div id="cd-mins" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(32px,7vw,52px);font-weight:500;color:var(--blue);line-height:1;">—</div>
+      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-top:4px;">Minutes</div>
+    </div>
+  </div>
   <button class="btn" onclick="goTo('rsvp')">RSVP Now</button>
 </div>
 
@@ -229,6 +250,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="trow"><span class="t-time">23:30</span><div class="t-sep"></div><span class="t-evt">Last Dance</span></div>
       <div class="trow"><span class="t-time">00:00</span><div class="t-sep"></div><span class="t-evt">Home Time</span></div>
     </div>
+    <p style="text-align:center;margin-top:32px;font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:var(--light);letter-spacing:.06em;line-height:1.8;">
+      This shows the full day — evening guests, we can't wait to see you from <strong style="font-weight:400;color:var(--mid);">7:00pm</strong> 🎉
+    </p>
   </div>
 </section>
 
@@ -246,7 +270,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 <section id="rsvp" class="bg-grey">
   <div class="s-inner">
     <div class="sh">
-      <p class="sh-eye-bold">Kindly Respond By 30th October 2026</p>
+      <p class="sh-eye-bold">Kindly Respond By 30th November 2026</p>
       <h2 class="sh-title">RSVP</h2>
       <div class="sh-line"></div>
     </div>
@@ -356,6 +380,7 @@ const SUPABASE_KEY='sb_publishable__lthlX7vu4UDQ6Sv8DmPGw_olrAjtbM';
 // NOTE: Names marked (?) need confirming — replace before invites go out
 const GUESTS = {
   day: [
+    // Callum's side
     "Mick Corley","Nikki Corley","Ewan Corley","Sophie Hayes",
     "Maureen Carswell-Grey","Lenny Carswell","Mark Corley","Marianne",
     "Patrick Corley","Hannah Corley","Sarah Wood","Mark Wood",
@@ -372,7 +397,21 @@ const GUESTS = {
     "Declan O'Callaghan","Rebecca Finlan","Rory Walkinshaw","HP",
     "Sachin Khunti","Anika Khunti","Kieran McGrath","Jill McGrath",
     "Kiva Talty","Ryan Flynn","Clare Flynn","Connor Wilkins","Connor Wife",
-    "Molly Allen","Dave Allen","Tom O'Connor","Emma O'Connor","Lianne Agnew","Claude Day"
+    "Molly Allen","Dave Allen","Tom O'Connor","Emma O'Connor","Lianne Agnew",
+    // Livvy's side
+    "David Tilton","Tina Tilton","Alice Tilton","Amma",
+    "Harry Tilton","George","Sofia","Scott","Libby",
+    "Corrie","Courtney","Rebecka","Chris","Sophie O",
+    "Alex T","Jak","Charlie","Hannah B","Sue Bavington",
+    "Mike Bavington","Sarah B","Adam B","Imogen","Mo",
+    "Lucy A","Dan A","Lucy P","Dave B","Nancy",
+    "Erwan","Hattie","Dan B","Rosalie","Joanna",
+    "Sina","Sophie O'Dowd","Steffi","Chelder",
+    "Constance","Jessi","Emily B","Rory B","Nat B",
+    "Shaun","Bek","Rach","Emma B","Madeleine",
+    "George B","Kerryn","Cam","Xanthe","Jamie",
+    "Mike Q","Judy Q",
+    "Claude Day"
   ],
   evening: [
     "Maddie Kavanagh","Sienna Corley","Isla Corley","Bella Wood",
@@ -380,7 +419,10 @@ const GUESTS = {
     "Gareth Witcombe","Charlotte Witcombe","Ollie","John",
     "Henry Green","Rebecca Green","Mike Davies","Bernie Meijer",
     "Paul Andrews","Amy Andrew","Ty Watson","Ruth Watson",
-    "Harry White","Natasha White","Claude Evening"
+    "Harry White","Natasha White","Hobo","Baz","Laura E",
+    "Sarah E","Esme","Daisy","Ella","Kate E",
+    "Mike E","George M","Wojciech","Maddie E","Jack E",
+    "Claude Evening"
   ]
 };
 
@@ -501,8 +543,8 @@ async function lookup() {
     if (alreadyResponded) {
       cGuest = result;
       document.getElementById('step-lookup').style.display = 'none';
-      document.getElementById('already-name').textContent = 
-        'We already have your RSVP, ' + result.name + '. Thank you for responding!';
+      const alreadyNameEl = document.getElementById('already-name');
+      if (alreadyNameEl) alreadyNameEl.textContent = 'We already have your RSVP, ' + result.name + '. Thank you for responding!';
       document.getElementById('step-already').style.display = 'block';
     } else {
       cGuest = result;
@@ -574,6 +616,46 @@ function resetRsvp(){
   document.getElementById('submit-status').style.display='none';
   const ex=document.getElementById('extras');if(ex)ex.style.display='none';
 }
+
+// Countdown timer
+function updateCountdown() {
+  const wedding = new Date('2027-04-30T14:00:00');
+  const now = new Date();
+  const diff = wedding - now;
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML = '<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--blue);">Today's the day! 🎉</p>';
+    return;
+  }
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const secs = Math.floor((diff % (1000*60)) / 1000);
+  document.getElementById('countdown').innerHTML =
+    block(days,'Days') + sep() + block(hours,'Hours') + sep() + block(mins,'Mins') + sep() + block(secs,'Secs');
+}
+function block(n,label){return '<div class="cd-block"><div class="cd-num">'+String(n).padStart(2,'0')+'</div><div class="cd-label">'+label+'</div></div>';}
+function sep(){return '<div class="cd-sep">·</div>';}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Countdown timer
+function updateCountdown() {
+  const wedding = new Date('2027-04-30T14:00:00');
+  const now = new Date();
+  const diff = wedding - now;
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML = '<p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:22px;color:var(--blue);">Today's the day!</p>';
+    return;
+  }
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+  document.getElementById('cd-days').textContent = days;
+  document.getElementById('cd-hours').textContent = hours;
+  document.getElementById('cd-mins').textContent = mins;
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
 
 // Image fade-in on load
 document.addEventListener('DOMContentLoaded', function() {

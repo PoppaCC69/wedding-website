@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Page Not Found — Callum &amp; Livvy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cream:#FAF6EA;--blue:#5B7CAE;--blue-light:#B8D4E0;--grey-mid:#E0DED9;--charcoal:#2A2A2A;--mid:#5A5A5A;--light:#9A9A9A;--grad:linear-gradient(90deg,var(--blue-light),var(--blue),var(--blue-light));}
+html,body{height:100%;}
+body{background:var(--cream);font-family:'Cormorant Garamond',serif;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;min-height:100vh;position:relative;}
+body::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);}
+.num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(80px,20vw,140px);color:var(--blue-light);line-height:1;margin-bottom:0;}
+.names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(28px,6vw,48px);color:var(--blue);margin-bottom:16px;line-height:1;}
+.msg{font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);line-height:1.85;letter-spacing:.04em;max-width:320px;margin-bottom:40px;}
+.home-btn{background:var(--blue);color:white;border:none;padding:14px 40px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;border-radius:8px;transition:background .2s;}
+.home-btn:hover{background:#4a6a99;}
+.divider{display:flex;align-items:center;gap:16px;margin:28px auto 0;width:120px;}
+.divider-line{flex:1;height:1px;background:var(--grey-mid);}
+.date{font-family:'Jost',sans-serif;font-weight:300;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--light);}
+</style>
+</head>
+<body>
+  <p class="num">404</p>
+  <h1 class="names">Callum &amp; Livvy</h1>
+  <p class="msg">Looks like this page has gone missing — probably celebrating somewhere it shouldn't be. Let's get you back on track.</p>
+  <a href="/" class="home-btn">Back to the Wedding</a>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="date">30 · 04 · 2027</span>
+    <div class="divider-line"></div>
+  </div>
+</body>
+</html>

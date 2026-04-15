@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--cream:#FAF6EA;--blue:#5B7CAE;--blue-light:#B8D4E0;--grey:#F2F1EF;--grey-mid:#E0DED9;--charcoal:#2A2A2A;--mid:#5A5A5A;--light:#9A9A9A;--green:#4a9e6b;--red:#b05555;}
+:root{--cream:#FAF6EA;--blue:#5B7CAE;--blue-light:#B8D4E0;--grey:#F2F1EF;--grey-mid:#E0DED9;--charcoal:#2A2A2A;--mid:#5A5A5A;--light:#9A9A9A;--green:#4a9e6b;--red:#b05555;--orange:#d4882a;}
 body{background:var(--grey);font-family:'Jost',sans-serif;color:var(--charcoal);}
 
 /* LOGIN */
@@ -22,22 +22,35 @@ body{background:var(--grey);font-family:'Jost',sans-serif;color:var(--charcoal);
 
 /* ADMIN */
 #admin-screen{display:none;padding:32px 20px;max-width:1100px;margin:0 auto;}
-.admin-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:gap;}
+.admin-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;gap:16px;flex-wrap:wrap;}
 .admin-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--blue);}
 .admin-sub{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-top:4px;}
-.export-btn{background:var(--blue);color:white;border:none;padding:10px 24px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:8px;}
+.header-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.export-btn{background:var(--blue);color:white;border:none;padding:10px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:8px;}
+.refresh-btn{background:white;color:var(--mid);border:1px solid var(--grey-mid);padding:10px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:8px;}
 
 /* STATS */
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px;}
-@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr);}}
-.stat-card{background:white;padding:20px;border:1px solid var(--grey-mid);text-align:center;}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:var(--blue);}
-.stat-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-top:4px;}
+@media(min-width:600px){.stats{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:900px){.stats{grid-template-columns:repeat(6,1fr);}}
+.stat-card{background:white;padding:20px 16px;border:1px solid var(--grey-mid);text-align:center;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;color:var(--blue);}
+.stat-num.orange{color:var(--orange);}
+.stat-num.green{color:var(--green);}
+.stat-num.red{color:var(--red);}
+.stat-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-top:4px;line-height:1.4;}
+
+/* PROGRESS BAR */
+.progress-wrap{background:white;border:1px solid var(--grey-mid);padding:20px 24px;margin-bottom:24px;}
+.progress-label{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-bottom:10px;}
+.progress-track{height:8px;background:var(--grey);border-radius:4px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue-light),var(--blue));border-radius:4px;transition:width .6s ease;}
 
 /* FILTERS */
 .filters{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
 .filter-btn{padding:8px 18px;border:1px solid var(--grey-mid);background:white;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:20px;transition:all .2s;}
 .filter-btn.active{background:var(--blue);color:white;border-color:var(--blue);}
+.filter-btn.active-orange{background:var(--orange);color:white;border-color:var(--orange);}
 
 /* TABLE */
 .table-wrap{background:white;border:1px solid var(--grey-mid);overflow-x:auto;}
@@ -45,14 +58,16 @@ table{width:100%;border-collapse:collapse;min-width:700px;}
 th{font-family:'Jost',sans-serif;font-weight:500;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--light);padding:14px 16px;text-align:left;border-bottom:2px solid var(--grey-mid);background:var(--grey);}
 td{padding:14px 16px;border-bottom:1px solid var(--grey-mid);font-size:13px;font-weight:300;color:var(--mid);vertical-align:top;}
 tr:last-child td{border-bottom:none;}
-tr:hover td{background:var(--grey);}
+tr:hover td{background:#fafafa;}
 .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;}
 .badge-day{background:rgba(91,124,174,.12);color:var(--blue);}
 .badge-eve{background:rgba(42,42,42,.1);color:var(--charcoal);}
 .badge-yes{background:rgba(74,158,107,.12);color:var(--green);}
 .badge-no{background:rgba(176,85,85,.12);color:var(--red);}
+.badge-pending{background:rgba(212,136,42,.12);color:var(--orange);}
 .no-data{text-align:center;padding:48px;color:var(--light);font-style:italic;}
 .loading{text-align:center;padding:48px;color:var(--light);}
+.name-strong{font-weight:400;color:var(--charcoal);}
 </style>
 </head>
 <body>
@@ -73,41 +88,51 @@ tr:hover td{background:var(--grey);}
       <p class="admin-title">Callum &amp; Livvy — RSVP Dashboard</p>
       <p class="admin-sub">30th April 2027 &nbsp;·&nbsp; The Organ Factory</p>
     </div>
-    <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+    <div class="header-btns">
+      <button class="refresh-btn" onclick="loadRsvps()">↻ Refresh</button>
+      <button class="export-btn" onclick="exportCSV('responded')">Export Responded</button>
+      <button class="export-btn" onclick="exportCSV('chaser')">Export Not Responded</button>
+    </div>
   </div>
 
   <div class="stats">
-    <div class="stat-card"><div class="stat-num" id="s-total">—</div><div class="stat-label">Total Responses</div></div>
-    <div class="stat-card"><div class="stat-num" id="s-attending">—</div><div class="stat-label">Attending</div></div>
-    <div class="stat-card"><div class="stat-num" id="s-day">—</div><div class="stat-label">Day Guests</div></div>
-    <div class="stat-card"><div class="stat-num" id="s-eve">—</div><div class="stat-label">Evening Guests</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-invited">—</div><div class="stat-label">Total Invited</div></div>
+    <div class="stat-card"><div class="stat-num green" id="s-attending">—</div><div class="stat-label">Confirmed Attending</div></div>
+    <div class="stat-card"><div class="stat-num red" id="s-declined">—</div><div class="stat-label">Declined</div></div>
+    <div class="stat-card"><div class="stat-num orange" id="s-pending">—</div><div class="stat-label">Not Yet Responded</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-day">—</div><div class="stat-label">Day Attending</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-eve">—</div><div class="stat-label">Evening Attending</div></div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Response Rate</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
   </div>
 
   <div class="filters">
-    <button class="filter-btn active" onclick="filterRsvps('all',this)">All</button>
-    <button class="filter-btn" onclick="filterRsvps('day',this)">Day</button>
-    <button class="filter-btn" onclick="filterRsvps('evening',this)">Evening</button>
-    <button class="filter-btn" onclick="filterRsvps('attending',this)">Attending</button>
-    <button class="filter-btn" onclick="filterRsvps('declined',this)">Declined</button>
+    <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" onclick="setFilter('attending',this)">Attending</button>
+    <button class="filter-btn" onclick="setFilter('declined',this)">Declined</button>
+    <button class="filter-btn" onclick="setFilter('day',this)">Day</button>
+    <button class="filter-btn" onclick="setFilter('evening',this)">Evening</button>
+    <button class="filter-btn" onclick="setFilter('pending',this)" id="pending-btn">Not Responded</button>
   </div>
 
   <div class="table-wrap">
-    <table>
-      <thead>
+    <table id="main-table">
+      <thead id="table-head">
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Attending</th>
-          <th>Dietary</th>
-          <th>Allergies</th>
-          <th>Song Request</th>
-          <th>Day Two</th>
-          <th>Note</th>
-          <th>Submitted</th>
+          <th>Name</th><th>Type</th><th>Attending</th><th>Dietary</th>
+          <th>Allergies</th><th>Song Request</th><th>Day Two</th><th>Note</th><th>Submitted</th>
         </tr>
       </thead>
       <tbody id="rsvp-tbody">
-        <tr><td colspan="9" class="loading">Loading responses…</td></tr>
+        <tr><td colspan="9" class="loading">Loading…</td></tr>
       </tbody>
     </table>
   </div>
@@ -117,7 +142,45 @@ tr:hover td{background:var(--grey);}
 const SUPABASE_URL='https://rheetkmurbkfzghatznc.supabase.co';
 const SUPABASE_KEY='sb_publishable__lthlX7vu4UDQ6Sv8DmPGw_olrAjtbM';
 const ADMIN_PASSWORD='giddyup2027';
-let allRsvps=[];
+
+// Full guest list — must stay in sync with index.html
+const GUESTS = {
+  day: [
+    "Mick Corley","Nikki Corley","Ewan Corley","Sophie Hayes",
+    "Maureen Carswell-Grey","Lenny Carswell","Mark Corley","Marianne",
+    "Patrick Corley","Hannah Corley","Sarah Wood","Mark Wood",
+    "John Corley","Claire Corley","Autumn Corley","Eileen Young",
+    "John Young","James Young","Rosie Young","Annie Kavanagh",
+    "John Kavanagh","Johnny Young","Katie Young","Tom Carswell",
+    "Lisa Freeman","Adam Freeman","Evie Freeman","Noah Freeman",
+    "Sarah Laub","Indya","Diego","Sienna Laub","Sidney Laub",
+    "Elliot Keable","Lauren","Tom Boden","Joe Olszewski","Andrea",
+    "Tom Bishop","Dawn","Hari Pathak-Mould","Mags","Joe Stevens",
+    "Natalie Johnson","Tom Hall","Mimi Brookes","Billy Blair",
+    "Matt Davies","Olya Davies","Ed Johnston","Lucy Roper",
+    "Harry Lin","Alexis Golden","Alex Cohen","Amy Cohen",
+    "Declan O'Callaghan","Rebecca Finlan","Rory Walkinshaw","HP",
+    "Sachin Khunti","Anika Khunti","Kieran McGrath","Jill McGrath",
+    "Kiva Talty","Ryan Flynn","Clare Flynn","Connor Wilkins","Connor Wife",
+    "Molly Allen","Dave Allen","Tom O'Connor","Emma O'Connor","Lianne Agnew",
+    "Claude Day"
+  ],
+  evening: [
+    "Maddie Kavanagh","Sienna Corley","Isla Corley","Bella Wood",
+    "Violet Wood","Matilda Wood","Benny Watkins","Karen Watkins",
+    "Gareth Witcombe","Charlotte Witcombe","Ollie","John",
+    "Henry Green","Rebecca Green","Mike Davies","Bernie Meijer",
+    "Paul Andrews","Amy Andrew","Ty Watson","Ruth Watson",
+    "Harry White","Natasha White","Claude Evening"
+  ]
+};
+
+const ALL_GUESTS = [
+  ...GUESTS.day.map(n=>({name:n,type:'day'})),
+  ...GUESTS.evening.map(n=>({name:n,type:'evening'}))
+];
+
+let allRsvps=[], currentFilter='all';
 
 function checkPw(){
   const pw=document.getElementById('pw-input').value;
@@ -132,33 +195,92 @@ function checkPw(){
 }
 
 async function loadRsvps(){
+  document.getElementById('rsvp-tbody').innerHTML='<tr><td colspan="9" class="loading">Loading…</td></tr>';
   try{
     const res=await fetch(SUPABASE_URL+'/rest/v1/rsvps?select=*&order=created_at.desc',{
       headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY}
     });
     allRsvps=await res.json();
     updateStats();
-    renderTable(allRsvps);
+    renderTable(currentFilter);
   }catch(e){
-    document.getElementById('rsvp-tbody').innerHTML='<tr><td colspan="9" class="no-data">Error loading data — please refresh.</td></tr>';
+    document.getElementById('rsvp-tbody').innerHTML='<tr><td colspan="9" class="no-data">Error loading — please refresh.</td></tr>';
   }
 }
 
-function updateStats(){
-  const attending=allRsvps.filter(r=>r.attending==='yes');
-  document.getElementById('s-total').textContent=allRsvps.length;
-  document.getElementById('s-attending').textContent=attending.length;
-  document.getElementById('s-day').textContent=attending.filter(r=>r.guest_type==='day').length;
-  document.getElementById('s-eve').textContent=attending.filter(r=>r.guest_type==='evening').length;
+function getNotResponded(){
+  const respondedNames=allRsvps.map(r=>r.name.toLowerCase().trim());
+  return ALL_GUESTS.filter(g=>!respondedNames.includes(g.name.toLowerCase().trim()));
 }
 
-function renderTable(data){
+function updateStats(){
+  const total=ALL_GUESTS.length;
+  const attending=allRsvps.filter(r=>r.attending==='yes');
+  const declined=allRsvps.filter(r=>r.attending==='no');
+  const pending=getNotResponded();
+  const pct=total>0?Math.round((allRsvps.length/total)*100):0;
+
+  document.getElementById('s-invited').textContent=total;
+  document.getElementById('s-attending').textContent=attending.length;
+  document.getElementById('s-declined').textContent=declined.length;
+  document.getElementById('s-pending').textContent=pending.length;
+  document.getElementById('s-day').textContent=attending.filter(r=>r.guest_type==='day').length;
+  document.getElementById('s-eve').textContent=attending.filter(r=>r.guest_type==='evening').length;
+  document.getElementById('progress-pct').textContent=pct+'%';
+  document.getElementById('progress-fill').style.width=pct+'%';
+}
+
+function setFilter(type, btn){
+  currentFilter=type;
+  document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.remove('active','active-orange');});
+  if(type==='pending') btn.classList.add('active-orange');
+  else btn.classList.add('active');
+  renderTable(type);
+}
+
+function renderTable(filter){
+  const thead=document.getElementById('table-head');
   const tbody=document.getElementById('rsvp-tbody');
-  if(!data.length){tbody.innerHTML='<tr><td colspan="9" class="no-data">No responses yet.</td></tr>';return;}
+
+  if(filter==='pending'){
+    // Show not-responded guests
+    thead.innerHTML=`<tr>
+      <th>Name</th><th>Type</th><th>Status</th>
+    </tr>`;
+    const pending=getNotResponded();
+    if(!pending.length){
+      tbody.innerHTML='<tr><td colspan="3" class="no-data">Everyone has responded — amazing! 🎉</td></tr>';
+      return;
+    }
+    tbody.innerHTML=pending.map(g=>`<tr>
+      <td><span class="name-strong">${g.name}</span></td>
+      <td><span class="badge ${g.type==='day'?'badge-day':'badge-eve'}">${g.type}</span></td>
+      <td><span class="badge badge-pending">No Response</span></td>
+    </tr>`).join('');
+    return;
+  }
+
+  // Restore full headers for all other filters
+  thead.innerHTML=`<tr>
+    <th>Name</th><th>Type</th><th>Attending</th><th>Dietary</th>
+    <th>Allergies</th><th>Song Request</th><th>Day Two</th><th>Note</th><th>Submitted</th>
+  </tr>`;
+
+  let data=allRsvps;
+  if(filter==='day') data=allRsvps.filter(r=>r.guest_type==='day');
+  else if(filter==='evening') data=allRsvps.filter(r=>r.guest_type==='evening');
+  else if(filter==='attending') data=allRsvps.filter(r=>r.attending==='yes');
+  else if(filter==='declined') data=allRsvps.filter(r=>r.attending==='no');
+
+  if(!data.length){
+    tbody.innerHTML='<tr><td colspan="9" class="no-data">No responses in this category yet.</td></tr>';
+    return;
+  }
+
   tbody.innerHTML=data.map(r=>{
     const date=new Date(r.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
     return `<tr>
-      <td><strong style="font-weight:400;color:var(--charcoal)">${r.name||'—'}</strong></td>
+      <td><span class="name-strong">${r.name||'—'}</span></td>
       <td><span class="badge ${r.guest_type==='day'?'badge-day':'badge-eve'}">${r.guest_type||'—'}</span></td>
       <td><span class="badge ${r.attending==='yes'?'badge-yes':'badge-no'}">${r.attending==='yes'?'Yes':'No'}</span></td>
       <td>${r.dietary||'—'}</td>
@@ -171,31 +293,32 @@ function renderTable(data){
   }).join('');
 }
 
-function filterRsvps(type,btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  let filtered=allRsvps;
-  if(type==='day') filtered=allRsvps.filter(r=>r.guest_type==='day');
-  else if(type==='evening') filtered=allRsvps.filter(r=>r.guest_type==='evening');
-  else if(type==='attending') filtered=allRsvps.filter(r=>r.attending==='yes');
-  else if(type==='declined') filtered=allRsvps.filter(r=>r.attending==='no');
-  renderTable(filtered);
-}
+function exportCSV(type){
+  let rows=[], filename='';
 
-function exportCSV(){
-  if(!allRsvps.length){alert('No data to export.');return;}
-  const headers=['Name','Type','Attending','Dietary','Allergies','Song Request','Day Two','Note','Submitted'];
-  const rows=allRsvps.map(r=>[
-    r.name||'',r.guest_type||'',r.attending||'',r.dietary||'',
-    r.allergies||'',r.song_request||'',r.day_two||'',
-    (r.note_to_couple||'').replace(/,/g,';'),
-    new Date(r.created_at).toLocaleDateString('en-GB')
-  ]);
-  const csv=[headers,...rows].map(r=>r.join(',')).join('\n');
+  if(type==='responded'){
+    if(!allRsvps.length){alert('No responses to export yet.');return;}
+    const headers=['Name','Type','Attending','Dietary','Allergies','Song Request','Day Two','Note','Submitted'];
+    rows=allRsvps.map(r=>[
+      r.name||'',r.guest_type||'',r.attending||'',r.dietary||'',
+      r.allergies||'',r.song_request||'',r.day_two||'',
+      (r.note_to_couple||'').replace(/,/g,';'),
+      new Date(r.created_at).toLocaleDateString('en-GB')
+    ]);
+    filename='callum-livvy-rsvps.csv';
+    rows.unshift(headers);
+  } else {
+    const pending=getNotResponded();
+    if(!pending.length){alert('Everyone has responded!');return;}
+    rows=[['Name','Type'],...pending.map(g=>[g.name,g.type])];
+    filename='callum-livvy-chaser-list.csv';
+  }
+
+  const csv=rows.map(r=>r.map(v=>`"${v}"`).join(',')).join('\n');
   const blob=new Blob([csv],{type:'text/csv'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download='callum-livvy-rsvps.csv';
+  a.download=filename;
   a.click();
 }
 </script>

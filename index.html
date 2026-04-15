@@ -39,21 +39,19 @@ nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;backg
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* HERO */
-.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 48px;position:relative;background:var(--cream);}
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 48px;position:relative;background:var(--cream);}
 .hero-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);}
-.hero-photos{display:flex;gap:10px;margin-bottom:28px;align-items:flex-end;justify-content:center;}
-.hero-photo{overflow:hidden;flex-shrink:0;}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top;}
-.hp-side{width:88px;height:116px;}
-.hp-main{width:124px;height:163px;}
+.hero-photos{display:flex;gap:12px;margin-bottom:28px;align-items:flex-end;justify-content:center;}
+.hero-photo{overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.12);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.hp-side{width:110px;height:148px;}
+.hp-main{width:155px;height:205px;}
 .hero-eyebrow{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);margin-bottom:12px;}
-.hero-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(48px,12vw,88px);color:var(--blue);line-height:1;letter-spacing:-.01em;}
+.hero-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(52px,13vw,92px);color:var(--blue);line-height:1;letter-spacing:-.01em;}
 .hero-rule{display:flex;align-items:center;gap:14px;margin:18px 0 12px;}
-.hero-rule-line{height:1px;flex:1;max-width:48px;background:var(--grey-mid);}
+.hero-rule-line{height:1px;flex:1;max-width:52px;background:var(--grey-mid);}
 .hero-date-text{font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.2em;font-size:10px;text-transform:uppercase;color:var(--mid);}
-.hero-venue-text{font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.14em;font-size:10px;text-transform:uppercase;color:var(--light);margin-bottom:28px;}
-
-/* BUTTONS */
+.hero-venue-text{font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.14em;font-size:10px;text-transform:uppercase;color:var(--light);margin-bottom:32px;}
 .btn{background:var(--blue);color:white;border:none;padding:14px 40px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;display:inline-block;border-radius:8px;}
 .btn:hover{background:#4a6a99;transform:translateY(-1px);}
 .btn:disabled{background:var(--light);cursor:not-allowed;transform:none;}
@@ -65,28 +63,20 @@ section{padding:72px 20px;}
 .s-inner{max-width:700px;margin:0 auto;}
 .bg-white{background:var(--white);}
 .bg-grey{background:var(--grey);}
-
-/* HEADINGS */
 .sh{text-align:center;margin-bottom:48px;}
 .sh-eye{font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.26em;font-size:9px;text-transform:uppercase;color:var(--light);margin-bottom:12px;}
 .sh-eye-bold{font-family:'Jost',sans-serif;font-weight:600;letter-spacing:.2em;font-size:13px;text-transform:uppercase;color:var(--charcoal);margin-bottom:14px;}
 .sh-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,5vw,44px);color:var(--blue);margin-bottom:18px;line-height:1.05;}
 .sh-line{width:44px;height:1px;background:var(--grey-mid);margin:0 auto;}
-
-/* DETAILS */
 .details-grid{display:grid;grid-template-columns:1fr;gap:32px;text-align:center;}
 .d-label{font-family:'Jost',sans-serif;font-weight:400;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--light);margin-bottom:8px;}
 .d-value{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;color:var(--charcoal);line-height:1.45;}
-.maps-link{display:inline-block;margin-top:10px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue-light);padding-bottom:2px;transition:border-color .2s;}
+.maps-link{display:inline-block;margin-top:10px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue-light);padding-bottom:2px;}
 .maps-link:hover{border-color:var(--blue);}
-
-/* STORY */
 .story-photos{display:flex;gap:12px;justify-content:center;margin-bottom:28px;flex-wrap:wrap;}
-.story-photo{overflow:hidden;}
+.story-photo{overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);}
 .story-photo img{width:100%;height:100%;object-fit:cover;object-position:center;}
 .story-placeholder-box{text-align:center;padding:32px 24px;border:1px dashed var(--grey-mid);background:var(--grey);}
-
-/* SCHEDULE */
 .timeline{max-width:480px;margin:0 auto;}
 .trow{display:grid;grid-template-columns:60px 1px 1fr;gap:0 18px;align-items:center;padding:15px 0;}
 .trow:not(:last-child){border-bottom:1px solid var(--grey-mid);}
@@ -94,15 +84,11 @@ section{padding:72px 20px;}
 .t-sep{background:var(--grey-mid);align-self:stretch;width:1px;}
 .t-evt{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:var(--charcoal);}
 .t-note{font-family:'Jost',sans-serif;font-weight:300;font-size:11px;color:var(--light);letter-spacing:.04em;margin-top:3px;}
-
-/* DAY TWO */
 .daytwo-box{text-align:center;max-width:460px;margin:0 auto;padding:40px 24px;border:1px solid var(--grey-mid);background:var(--white);}
 .dt-kicker{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--blue);line-height:1.6;margin-bottom:16px;}
 .dt-body{font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);line-height:1.9;letter-spacing:.03em;margin-bottom:28px;}
 .watch-badge{display:inline-block;padding:10px 24px;border:1px solid var(--grey-mid);}
 .watch-badge span{font-family:'Jost',sans-serif;font-weight:300;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--light);}
-
-/* RSVP */
 .rsvp-inner{max-width:460px;margin:0 auto;}
 .guest-badge{display:inline-block;padding:10px 28px;border-radius:8px;margin:0 auto 32px;font-family:'Jost',sans-serif;font-weight:400;font-size:14px;letter-spacing:.12em;text-transform:uppercase;text-align:center;}
 .badge-day{background:var(--blue);color:white;}
@@ -117,14 +103,11 @@ textarea{resize:vertical;}
 .tbtn.on-blue{border-color:var(--blue);background:var(--blue);color:white;}
 .tbtn.on-dark{border-color:var(--charcoal);background:var(--charcoal);color:white;}
 .rsvp-err{font-family:'Jost',sans-serif;font-size:12px;color:#b05555;letter-spacing:.04em;margin-top:6px;display:none;}
+.rsvp-hint{font-family:'Jost',sans-serif;font-size:11px;color:var(--light);letter-spacing:.04em;margin-top:8px;text-align:center;display:none;line-height:1.7;}
 .submit-status{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.04em;display:none;text-align:center;padding:10px;}
-
-/* TRAVEL */
 .travel-grid{display:grid;grid-template-columns:1fr;gap:36px;}
 .tr-label{font-family:'Jost',sans-serif;font-weight:400;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:9px;}
 .tr-text{font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);line-height:1.85;letter-spacing:.03em;}
-
-/* FAQS */
 .faq-wrap{max-width:600px;margin:0 auto;}
 .faq-item{border-bottom:1px solid var(--grey-mid);}
 .faq-btn{width:100%;background:none;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px;}
@@ -133,30 +116,27 @@ textarea{resize:vertical;}
 .faq-a{font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);line-height:1.9;letter-spacing:.03em;padding:0 0 18px;display:none;}
 .faq-a.open{display:block;}
 .faq-plus.open{transform:rotate(45deg);}
-
-/* FOOTER */
 footer{background:var(--cream);padding:56px 20px;text-align:center;position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
 .ft-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:28px;color:var(--blue);margin-bottom:10px;}
 .ft-date{font-family:'Jost',sans-serif;font-weight:300;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--light);}
 .ft-giddy{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--blue);margin-top:20px;}
 
-/* DESKTOP */
 @media(min-width:768px){
   nav{padding:0 36px;}
   .nav-links{display:flex!important;flex-direction:row;position:static;background:transparent;padding:0;border:none;box-shadow:none;gap:4px;}
   .nav-links a{border-bottom:none;padding:8px 12px;border-radius:2px;}
   .hamburger{display:none;}
-  .hero{min-height:82vh;padding:80px 24px 48px;}
-  .hp-side{width:130px;height:170px;}
-  .hp-main{width:160px;height:210px;}
+  .hero{min-height:85vh;padding:80px 24px 48px;}
+  .hp-side{width:155px;height:205px;}
+  .hp-main{width:195px;height:258px;}
   .hero-photos{gap:20px;}
   .details-grid{grid-template-columns:1fr 1fr;gap:48px;}
   .travel-grid{grid-template-columns:1fr 1fr;gap:48px;}
   section{padding:88px 24px;}
   .s-inner{max-width:740px;}
   .toggle-row{flex-wrap:nowrap;}
-  .story-photos .story-photo{width:200px;height:260px;}
+  .story-photos .story-photo{width:210px;height:270px;}
 }
 </style>
 </head>
@@ -222,15 +202,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">How It All Began</p><h2 class="sh-title">Our Story</h2><div class="sh-line"></div></div>
     <div class="story-photos">
-      <div class="story-photo" style="width:140px;height:180px;">
-        <img src="story-1.jpg" alt="Callum and Livvy in Malta"/>
-      </div>
-      <div class="story-photo" style="width:140px;height:180px;">
-        <img src="story-2.jpg" alt="Callum and Livvy at Bondi Beach"/>
-      </div>
-      <div class="story-photo" style="width:140px;height:180px;">
-        <img src="story-3.jpg" alt="Callum and Livvy at sunset"/>
-      </div>
+      <div class="story-photo" style="width:140px;height:180px;"><img src="story-1.jpg" alt="Callum and Livvy in Malta"/></div>
+      <div class="story-photo" style="width:140px;height:180px;"><img src="story-2.jpg" alt="Callum and Livvy at Bondi Beach"/></div>
+      <div class="story-photo" style="width:140px;height:180px;"><img src="story-3.jpg" alt="Callum and Livvy at desert sunset"/></div>
     </div>
     <div class="story-placeholder-box">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--light);line-height:1.8;">Your story goes here — we'll write this together when you're ready.</p>
@@ -274,11 +248,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="sh-line"></div>
     </div>
     <div id="step-lookup" class="rsvp-inner">
-      <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);line-height:1.85;text-align:center;margin-bottom:28px;letter-spacing:.03em;">Enter your name exactly as it appears on your invitation — we'll pull up your personal RSVP.</p>
+      <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);line-height:1.85;text-align:center;margin-bottom:28px;letter-spacing:.03em;">Enter your name as it appears on your invitation. Nicknames and short names work too — just try what feels natural.</p>
       <div class="fstack">
         <div>
-          <input id="name-in" type="text" placeholder="Your full name (e.g. James Smith)" onkeydown="if(event.key==='Enter')lookup()"/>
-          <p id="lookup-err" class="rsvp-err">We couldn't find that name. Please check your invitation spelling or get in touch with us directly.</p>
+          <input id="name-in" type="text" placeholder="e.g. James Smith or Jim Smith" onkeydown="if(event.key==='Enter')lookup()"/>
+          <p id="lookup-err" class="rsvp-err">We couldn't find that name — try a different variation, or get in touch with us directly.</p>
+          <p id="lookup-hint" class="rsvp-hint"></p>
         </div>
         <button class="btn" style="width:100%" onclick="lookup()">Find My RSVP</button>
       </div>
@@ -365,30 +340,158 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 <script>
 const SUPABASE_URL='https://rheetkmurbkfzghatznc.supabase.co';
 const SUPABASE_KEY='sb_publishable__lthlX7vu4UDQ6Sv8DmPGw_olrAjtbM';
-const GUESTS={
-  day:["Callum Corley","Olivia Tilton","James Smith","Sarah Smith","Emily Johnson","Tom Johnson"],
-  evening:["Alex Brown","Jessica Brown","Mike Wilson","Kate Wilson"]
+
+// ── GUEST LISTS ──────────────────────────────────────────────────
+// NOTE: Names marked (?) need confirming — replace before invites go out
+const GUESTS = {
+  day: [
+    "Mick Corley","Nikki Corley","Ewan Corley","Sophie Hayes",
+    "Maureen Carswell-Grey","Lenny Carswell","Mark Corley","Marianne",
+    "Patrick Corley","Hannah Corley","Sarah Wood","Mark Wood",
+    "John Corley","Claire Corley","Autumn Corley","Eileen Young",
+    "John Young","James Young","Rosie Young","Annie Kavanagh",
+    "John Kavanagh","Johnny Young","Katie Young","Tom Carswell",
+    "Lisa Freeman","Adam Freeman","Evie Freeman","Noah Freeman",
+    "Sarah Laub","Indya","Diego","Sienna Laub","Sidney Laub",
+    "Elliot Keable","Lauren","Tom Boden","Joe Olszewski","Andrea",
+    "Tom Bishop","Dawn","Hari Pathak-Mould","Mags","Joe Stevens",
+    "Natalie Johnson","Tom Hall","Mimi Brookes","Billy Blair",
+    "Matt Davies","Olya Davies","Ed Johnston","Lucy Roper",
+    "Harry Lin","Alexis Golden","Alex Cohen","Amy Cohen",
+    "Declan O'Callaghan","Rebecca Finlan","Rory Walkinshaw","HP",
+    "Sachin Khunti","Anika Khunti","Kieran McGrath","Jill McGrath",
+    "Kiva Talty","Ryan Flynn","Clare Flynn","Connor Wilkins","Connor Wife",
+    "Molly Allen","Dave Allen","Tom O'Connor","Emma O'Connor","Lianne Agnew"
+  ],
+  evening: [
+    "Maddie Kavanagh","Sienna Corley","Isla Corley","Bella Wood",
+    "Violet Wood","Matilda Wood","Benny Watkins","Karen Watkins",
+    "Gareth Witcombe","Charlotte Witcombe","Ollie","John",
+    "Henry Green","Rebecca Green","Mike Davies","Bernie Meijer",
+    "Paul Andrews","Amy Andrew","Ty Watson","Ruth Watson",
+    "Harry White","Natasha White"
+  ]
 };
+
+// ── ALIASES: map search terms → exact name in list ───────────────
+// Handles nicknames, shortened names, and common variations
+const ALIASES = {
+  // Common nickname → full name mappings
+  "ben watkins": "Benny Watkins",
+  "benny": "Benny Watkins",
+  "ben": "Benny Watkins",
+  "elliot keabl": "Elliot Keable",
+  "elliot keabLE": "Elliot Keable",
+  "harry pathak": "Hari Pathak-Mould",
+  "hari pathak": "Hari Pathak-Mould",
+  "maureen carswell": "Maureen Carswell-Grey",
+  "maureen grey": "Maureen Carswell-Grey",
+  "declan ocallaghan": "Declan O'Callaghan",
+  "declan o callaghan": "Declan O'Callaghan",
+  "tom oconnor": "Tom O'Connor",
+  "tom o connor": "Tom O'Connor",
+  "joe o": "Joe Olszewski",
+  "olszewski": "Joe Olszewski",
+  "matt": "Matt Davies",
+  "mimi": "Mimi Brookes",
+  "billy": "Billy Blair",
+  "sachin": "Sachin Khunti",
+  "anika": "Anika Khunti",
+  "kiva": "Kiva Talty",
+  "rory": "Rory Walkinshaw",
+  "lianne": "Lianne Agnew",
+  "alexis": "Alexis Golden",
+  "molly": "Molly Allen",
+  "dave": "Dave Allen",
+  "david allen": "Dave Allen",
+  "gareth": "Gareth Witcombe",
+  "charlotte witcombe": "Charlotte Witcombe",
+  "bernie": "Bernie Meijer",
+  "ty": "Ty Watson",
+  "ty watson": "Ty Watson",
+  "harry w": "Harry White",
+  "natasha": "Natasha White",
+  "paul": "Paul Andrews",
+  "amy andrew": "Amy Andrew",
+  "mike": "Mike Davies",
+  "henry": "Henry Green",
+  "rebecca green": "Rebecca Green",
+  "maddie": "Maddie Kavanagh",
+  "sienna c": "Sienna Corley",
+  "isla": "Isla Corley",
+  "bella": "Bella Wood",
+  "violet": "Violet Wood",
+  "matilda": "Matilda Wood"
+};
+
 let cGuest=null,att=null,d2=null;
+
 function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
 function closeMenu(){document.getElementById('nav-links').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
-function lookup(){
-  const n=document.getElementById('name-in').value.trim().toLowerCase();
-  const dm=GUESTS.day.find(x=>x.toLowerCase()===n);
-  const em=GUESTS.evening.find(x=>x.toLowerCase()===n);
-  const err=document.getElementById('lookup-err');
-  if(dm||em){
-    cGuest={name:dm||em,type:dm?'day':'evening'};
-    err.style.display='none';
-    document.getElementById('step-lookup').style.display='none';
-    document.getElementById('welcome-name').textContent='Welcome, '+cGuest.name;
-    const b=document.getElementById('guest-badge');
-    b.textContent=cGuest.type==='day'?'Day Guest':'Evening Guest';
-    b.className='guest-badge '+(cGuest.type==='day'?'badge-day':'badge-eve');
-    document.getElementById('step-form').style.display='block';
-  }else{err.style.display='block';}
+
+// ── SMART NAME MATCHING ──────────────────────────────────────────
+function findGuest(input) {
+  const n = input.trim().toLowerCase().replace(/'/g,"'");
+  const allGuests = [
+    ...GUESTS.day.map(name => ({name, type:'day'})),
+    ...GUESTS.evening.map(name => ({name, type:'evening'}))
+  ];
+
+  // 1. Exact match
+  const exact = allGuests.find(g => g.name.toLowerCase() === n);
+  if (exact) return exact;
+
+  // 2. Alias lookup
+  const aliasTarget = ALIASES[n];
+  if (aliasTarget) {
+    const aliasMatch = allGuests.find(g => g.name.toLowerCase() === aliasTarget.toLowerCase());
+    if (aliasMatch) return aliasMatch;
+  }
+
+  // 3. Fuzzy: first name starts-with match + optional last name match
+  const parts = n.split(' ').filter(Boolean);
+  const inputFirst = parts[0];
+  const inputLast = parts.length > 1 ? parts[parts.length - 1] : null;
+
+  const fuzzy = allGuests.filter(g => {
+    const gParts = g.name.toLowerCase().split(' ').filter(Boolean);
+    const gFirst = gParts[0];
+    const gLast = gParts.length > 1 ? gParts[gParts.length - 1] : null;
+    const firstMatch = gFirst.startsWith(inputFirst) || inputFirst.startsWith(gFirst);
+    const lastMatch = !inputLast || !gLast || gLast.startsWith(inputLast) || inputLast.startsWith(gLast);
+    return firstMatch && lastMatch;
+  });
+
+  if (fuzzy.length === 1) return fuzzy[0];
+
+  // 4. If multiple fuzzy matches, return null (ambiguous — ask them to be more specific)
+  return null;
 }
+
+function lookup() {
+  const raw = document.getElementById('name-in').value;
+  const err = document.getElementById('lookup-err');
+  const hint = document.getElementById('lookup-hint');
+  const result = findGuest(raw);
+
+  if (result) {
+    cGuest = result;
+    err.style.display = 'none';
+    hint.style.display = 'none';
+    document.getElementById('step-lookup').style.display = 'none';
+    document.getElementById('welcome-name').textContent = 'Welcome, ' + cGuest.name;
+    const b = document.getElementById('guest-badge');
+    b.textContent = cGuest.type === 'day' ? 'Day Guest' : 'Evening Guest';
+    b.className = 'guest-badge ' + (cGuest.type === 'day' ? 'badge-day' : 'badge-eve');
+    document.getElementById('step-form').style.display = 'block';
+  } else {
+    err.style.display = 'block';
+    hint.style.display = 'block';
+    hint.textContent = 'Try a different spelling, your first name only, or contact Callum or Livvy directly.';
+  }
+}
+
 function setAtt(v){
   att=v;
   document.getElementById('a-yes').className='tbtn'+(v==='yes'?' on-blue':'');
@@ -398,6 +501,7 @@ function setAtt(v){
   if(v==='yes')ex.style.flexDirection='column';
 }
 function setD2(v){d2=v;['yes','maybe','no'].forEach(x=>{document.getElementById('d2-'+x).className='tbtn'+(v===x?' on-dark':'');});}
+
 async function submitRsvp(){
   if(!att){alert("Please let us know if you'll be attending.");return;}
   const btn=document.getElementById('submit-btn');
@@ -414,10 +518,12 @@ async function submitRsvp(){
     }else{throw new Error();}
   }catch(e){btn.disabled=false;btn.textContent='Submit RSVP';status.style.display='block';status.style.color='#b05555';status.textContent='Something went wrong — please try again or contact us directly.';}
 }
+
 function resetRsvp(){
   cGuest=null;att=null;d2=null;
   document.getElementById('name-in').value='';
   document.getElementById('lookup-err').style.display='none';
+  document.getElementById('lookup-hint').style.display='none';
   document.getElementById('step-form').style.display='none';
   document.getElementById('step-done').style.display='none';
   document.getElementById('step-lookup').style.display='block';
@@ -426,6 +532,7 @@ function resetRsvp(){
   document.getElementById('submit-status').style.display='none';
   const ex=document.getElementById('extras');if(ex)ex.style.display='none';
 }
+
 function faq(i){
   const a=document.getElementById('fa'+i),p=document.getElementById('fp'+i);
   const open=a.classList.contains('open');

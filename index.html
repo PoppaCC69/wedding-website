@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Callum &amp; Livvy — 30th April 2027</title>
-<meta name="description" content="Join us to celebrate the wedding of Callum & Livvy on 30th April 2027 at The Organ Factory, London E2."/>
-<meta property="og:title" content="Callum & Livvy — 30th April 2027"/>
+<title>Callum &amp; Livvy | 30th April 2027</title>
+<meta name="description" content="Join us to celebrate the wedding of Callum &amp; Livvy on 30th April 2027 at The Organ Factory, London E2."/>
+<meta property="og:title" content="Callum &amp; Livvy | 30th April 2027"/>
 <meta property="og:description" content="Join us to celebrate our wedding at The Organ Factory, London E2."/>
 <meta property="og:image" content="https://callumandlivvy.com/hero-centre.jpg"/>
 <meta property="og:url" content="https://callumandlivvy.com"/>
@@ -53,8 +53,8 @@ nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;backg
 .hero-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(52px,13vw,92px);color:var(--blue);line-height:1;letter-spacing:-.01em;}
 .hero-rule{display:flex;align-items:center;gap:14px;margin:18px 0 12px;}
 .hero-rule-line{height:1px;flex:1;max-width:52px;background:var(--grey-mid);}
-.hero-date-text{font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.2em;font-size:10px;text-transform:uppercase;color:var(--mid);}
-.hero-venue-text{font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.14em;font-size:10px;text-transform:uppercase;color:var(--light);margin-bottom:32px;}
+.hero-date-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);}
+.hero-venue-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);margin-bottom:32px;}
 .btn{background:var(--blue);color:white;border:none;padding:14px 40px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;display:inline-block;border-radius:8px;}
 .btn:hover{background:#4a6a99;transform:translateY(-1px);}
 .btn:disabled{background:var(--light);cursor:not-allowed;transform:none;}
@@ -243,7 +243,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="trow"><span class="t-time">00:00</span><div class="t-sep"></div><span class="t-evt">Home Time</span></div>
     </div>
     <p style="text-align:center;margin-top:32px;font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:var(--light);letter-spacing:.06em;line-height:1.8;">
-      This shows the full day — evening guests, we can't wait to see you from <strong style="font-weight:400;color:var(--mid);">7:00pm</strong> 🎉
+      This shows the full day. Evening guests, we can't wait to see you from <strong style="font-weight:400;color:var(--mid);">7:00pm</strong>
     </p>
   </div>
 </section>
@@ -253,7 +253,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     <div class="sh"><p class="sh-eye">The Morning After</p><h2 class="sh-title">Day Two</h2><div class="sh-line"></div></div>
     <div class="daytwo-box">
       <p class="dt-kicker">The celebrations don't stop at midnight.</p>
-      <p class="dt-body">We'll be continuing the fun at a local pub on Saturday 1st May. Details are still being locked in — but clear the diary, the Bloody Marys will be flowing and the dress code is sexy and chilled out — think sunglasses and jazzy colours.</p>
+      <p class="dt-body">We'll be continuing the fun at a local pub on Saturday 1st May. Details are still being locked in, but clear the diary, the Bloody Marys will be flowing and the dress code is chilled out, sexy vibe. Think sunglasses and jazzy colours.</p>
       <div class="watch-badge"><span>Watch This Space</span></div>
     </div>
   </div>
@@ -294,9 +294,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
         <div id="extras" style="display:none;" class="fstack">
           <div><label class="f-label">Dietary Requirements</label><input id="f-diet" type="text" placeholder="e.g. Vegetarian, Vegan, Halal…"/></div>
           <div><label class="f-label">Allergies</label><input id="f-allergy" type="text" placeholder="e.g. Nuts, Gluten, Dairy…"/></div>
-          <div><label class="f-label">Song Request 🎵</label><input id="f-song" type="text" placeholder="What'll get you on the dance floor?"/></div>
+          <div><label class="f-label">Song Request</label><input id="f-song" type="text" placeholder="What'll get you on the dance floor?"/></div>
           <div>
-            <label class="f-label">Day Two — Join us at the pub?</label>
+            <label class="f-label">Day Two: Join us at the pub?</label>
             <div class="toggle-row">
               <button class="tbtn" id="d2-yes" onclick="setD2('yes')">Absolutely!</button>
               <button class="tbtn" id="d2-maybe" onclick="setD2('maybe')">Maybe</button>
@@ -318,7 +318,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     <div id="step-already" class="rsvp-inner" style="display:none;text-align:center;padding:40px 0;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--blue);margin-bottom:14px;font-weight:500;">Already received!</p>
       <p id="already-name" style="font-family:'Jost',sans-serif;font-weight:300;font-size:13px;color:var(--mid);letter-spacing:.04em;line-height:1.9;max-width:340px;margin:0 auto 20px;"></p>
-      <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:var(--light);letter-spacing:.04em;line-height:1.85;max-width:320px;margin:0 auto 28px;">If you need to make any changes — dietary requirements, song requests, anything — just message Callum or Livvy directly and we'll sort it.</p>
+      <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:var(--light);letter-spacing:.04em;line-height:1.85;max-width:320px;margin:0 auto 28px;">If you need to make any changes (dietary requirements, song requests, anything) just message Callum or Livvy directly and we'll sort it.</p>
       <button class="btn-outline" onclick="resetRsvp()" style="display:inline-block;">← Back</button>
     </div>
   </div>
@@ -328,8 +328,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">Getting Here</p><h2 class="sh-title">Travel</h2><div class="sh-line"></div></div>
     <div class="travel-grid">
-      <div><p class="tr-label">By Tube</p><p class="tr-text">Bethnal Green (Central line) is a 15-minute walk — a direct, easy journey from anywhere in central London.</p></div>
-      <div><p class="tr-label">By Uber or Cab</p><p class="tr-text">We're right in the heart of East London — Ubers are plentiful all evening. Our top recommendation for the journey home after a big night.</p></div>
+      <div><p class="tr-label">By Tube</p><p class="tr-text">Bethnal Green (Central line) is a 15-minute walk, a direct and easy journey from anywhere in central London.</p></div>
+      <div><p class="tr-label">By Uber or Cab</p><p class="tr-text">We're right in the heart of East London. Ubers are plentiful all evening and our top recommendation for the journey home after a big night.</p></div>
       <div><p class="tr-label">By Car</p><p class="tr-text">Leave it at home! Street parking in E2 is limited and you'll enjoy the evening far more without worrying about it.</p></div>
       <div><p class="tr-label">The Venue</p><p class="tr-text">The Organ Factory, St Peter's Square, London E2 7AF. Drop this into Google Maps or Citymapper for door-to-door directions.</p></div>
     </div>
@@ -340,18 +340,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">Good to Know</p><h2 class="sh-title">FAQs</h2><div class="sh-line"></div></div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" onclick="faq(0)"><span class="faq-q">What's the dress code?</span><span class="faq-plus" id="fp0">+</span></button><p class="faq-a" id="fa0">Summer Formal — think elegant, polished and a little bit chic. Linen suits, floral midi dresses, statement accessories. Smart and sophisticated is the vibe.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(1)"><span class="faq-q">Are children welcome?</span><span class="faq-plus" id="fp1">+</span></button><p class="faq-a" id="fa1">We absolutely adore your little ones, but our wedding is an adults-only celebration. We hope this gives you the perfect excuse for a night off — we'll raise a glass to the kids!</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(2)"><span class="faq-q">Are plus ones invited?</span><span class="faq-plus" id="fp2">+</span></button><p class="faq-a" id="fa2">We've kept our guest list intentional and personal. Please check your invitation to see if a plus one is included — and feel free to reach out directly if you're unsure.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(3)"><span class="faq-q">What about gifts?</span><span class="faq-plus" id="fp3">+</span></button><p class="faq-a" id="fa3">Your presence on our day is the greatest gift we could ask for. If you'd like to give something, cash is always gratefully received — but truly, no pressure at all.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(4)"><span class="faq-q">Can I take photos during the ceremony?</span><span class="faq-plus" id="fp4">+</span></button><p class="faq-a" id="fa4">We'd love for you to be fully present during the ceremony — phones away, please! Our photographer will capture every moment. You're very welcome to snap away at the reception.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(5)"><span class="faq-q">What time should I arrive?</span><span class="faq-plus" id="fp5">+</span></button><p class="faq-a" id="fa5">Day guests are welcome from 2:00pm — the ceremony begins at 2:30pm sharp, so please aim to be seated by 2:20pm. Evening guests are welcome from 7:00pm.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(6)"><span class="faq-q">Where should I stay?</span><span class="faq-plus" id="fp6">+</span></button><p class="faq-a" id="fa6">We recommend staying in Bethnal Green or Shoreditch — everything is a short walk or quick Uber from the venue. There are plenty of hotels to choose from, but here are three quick recommendations:<br><br>
-        <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);">Travelodge London Bethnal Green</strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 3 star · 3 min walk</span><br>
-        <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);">citizenM Shoreditch</strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 4 star · 10 min walk</span><br>
-        <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);">Town Hall Hotel Bethnal Green</strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 5 star · 5 min walk</span></p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(7)"><span class="faq-q">Is there parking?</span><span class="faq-plus" id="fp7">+</span></button><p class="faq-a" id="fa7">We'd strongly recommend leaving the car at home. Central London with great tube and Uber links means there's really no need — enjoy the evening and let someone else do the driving.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(8)"><span class="faq-q">How do I get in touch?</span><span class="faq-plus" id="fp8">+</span></button><p class="faq-a" id="fa8">We'd love to hear from you — reach out to Callum or Livvy directly with any questions and we'll get back to you as soon as we can.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(0)"><span class="faq-q">What's the dress code?</span><span class="faq-plus" id="fp0">+</span></button><p class="faq-a" id="fa0">Summer Formal: think elegant, polished and a little bit chic. Linen suits, floral midi dresses, statement accessories. Smart and sophisticated is the vibe.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(1)"><span class="faq-q">Are children welcome?</span><span class="faq-plus" id="fp1">+</span></button><p class="faq-a" id="fa1">We absolutely adore your little ones, but our wedding is an adults-only celebration. We hope this gives you the perfect excuse for a night off. We'll raise a glass to the kids!</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(2)"><span class="faq-q">Are plus ones invited?</span><span class="faq-plus" id="fp2">+</span></button><p class="faq-a" id="fa2">We've kept our guest list intentional and personal. Please check your invitation to see if a plus one is included, and feel free to reach out directly if you're unsure.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(3)"><span class="faq-q">What about gifts?</span><span class="faq-plus" id="fp3">+</span></button><p class="faq-a" id="fa3">Your presence on our day is the greatest gift we could ask for. If you'd like to give something, cash is always gratefully received, but truly, no pressure at all.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(4)"><span class="faq-q">Can I take photos during the ceremony?</span><span class="faq-plus" id="fp4">+</span></button><p class="faq-a" id="fa4">We'd love for you to be fully present during the ceremony: phones away, please! Our photographer will capture every moment. You're very welcome to snap away at the reception.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(5)"><span class="faq-q">What time should I arrive?</span><span class="faq-plus" id="fp5">+</span></button><p class="faq-a" id="fa5">Day guests are welcome from 2:00pm. The ceremony begins at 2:30pm sharp, so please aim to be seated by 2:20pm. Evening guests are welcome from 7:00pm.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(6)"><span class="faq-q">Where should I stay?</span><span class="faq-plus" id="fp6">+</span></button><p class="faq-a" id="fa6">We recommend staying in Bethnal Green or Shoreditch, everything is a short walk or quick Uber from the venue. There are plenty of hotels to choose from, but here are three quick recommendations:<br><br>
+        <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);"><a href="https://www.travelodge.co.uk/hotels/588/London-Bethnal-Green-hotel" target="_blank" rel="noopener" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--grey-mid);">Travelodge London Bethnal Green</a></strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 3 star · 3 min walk</span><br>
+        <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);"><a href="https://www.citizenm.com/hotels/united-kingdom/london/london-shoreditch-hotel" target="_blank" rel="noopener" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--grey-mid);">citizenM Shoreditch</a></strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 4 star · 10 min walk</span><br>
+        <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);"><a href="https://www.townhallhotel.com" target="_blank" rel="noopener" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--grey-mid);">Town Hall Hotel Bethnal Green</a></strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 5 star · 5 min walk</span></p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(7)"><span class="faq-q">Is there parking?</span><span class="faq-plus" id="fp7">+</span></button><p class="faq-a" id="fa7">We'd strongly recommend leaving the car at home. Central London with great tube and Uber links means there's really no need, so enjoy the evening and let someone else do the driving.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(8)"><span class="faq-q">How do I get in touch?</span><span class="faq-plus" id="fp8">+</span></button><p class="faq-a" id="fa8">We'd love to hear from you. Reach out to Callum or Livvy directly with any questions and we'll get back to you as soon as we can.</p></div>
     </div>
   </div>
 </section>
@@ -614,8 +614,8 @@ async function submitRsvp(){
     if(res.ok){
       document.getElementById('done-name').textContent='Thank you, '+cGuest.name+'.';
       document.getElementById('done-msg').textContent=att==='yes'
-        ? "We're so excited to celebrate with you. See you on the 30th — it's going to be a night to remember!"
-        : "We'll miss you dearly. Thank you for letting us know — we'll raise a glass to you on the day.";
+        ? "We're so excited to celebrate with you. See you on the 30th, it's going to be a night to remember!"
+        : "We'll miss you dearly. Thank you for letting us know. We'll raise a glass to you on the day.";
       document.getElementById('step-form').style.display='none';
       document.getElementById('step-done').style.display='block';
     } else {
@@ -626,7 +626,7 @@ async function submitRsvp(){
     btn.textContent='Submit RSVP';
     status.style.display='block';
     status.style.color='#b05555';
-    status.textContent='Something went wrong — please try again or contact us directly.';
+    status.textContent='Something went wrong. Please try again or contact us directly.';
   }
 }
 

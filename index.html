@@ -23,6 +23,58 @@
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--charcoal);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
 
+/* PASSWORD GATE */
+#password-gate{
+  position:fixed;inset:0;z-index:1000;
+  background:var(--cream);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px;
+  transition:opacity .4s ease;
+}
+#password-gate::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--grad);
+}
+.gate-logo{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;
+  color:var(--blue);letter-spacing:.08em;font-weight:500;
+  position:absolute;top:22px;left:50%;transform:translateX(-50%);
+}
+.gate-inner{
+  text-align:center;max-width:380px;width:100%;
+}
+.gate-eyebrow{
+  font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.26em;font-size:9px;
+  text-transform:uppercase;color:var(--light);margin-bottom:14px;
+}
+.gate-names{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:clamp(42px,10vw,72px);color:var(--blue);line-height:1;
+  letter-spacing:-.01em;margin-bottom:16px;
+}
+.gate-rule{
+  display:flex;align-items:center;gap:14px;margin:0 auto 6px;max-width:260px;
+}
+.gate-rule-line{height:1px;flex:1;background:var(--grey-mid);}
+.gate-date{
+  font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.2em;font-size:10px;
+  text-transform:uppercase;color:var(--mid);margin-bottom:36px;
+}
+.gate-fields{display:flex;flex-direction:column;gap:12px;}
+#gate-input{
+  width:100%;padding:13px 15px;border:1px solid var(--grey-mid);
+  font-family:'Jost',sans-serif;font-weight:300;font-size:14px;
+  background:white;color:var(--charcoal);outline:none;
+  transition:border-color .2s;letter-spacing:.06em;border-radius:6px;
+  text-align:center;
+}
+#gate-input:focus{border-color:var(--blue);}
+#gate-err{
+  font-family:'Jost',sans-serif;font-size:12px;color:#b05555;
+  letter-spacing:.04em;margin-top:2px;display:none;
+  text-align:center;
+}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(250,246,234,.98);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(0,0,0,.05);}
 nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--grad);}
@@ -148,6 +200,25 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="password-gate">
+  <p class="gate-logo">C &amp; L</p>
+  <div class="gate-inner">
+    <p class="gate-eyebrow">You are invited</p>
+    <h1 class="gate-names">Callum &amp; Livvy</h1>
+    <div class="gate-rule">
+      <div class="gate-rule-line"></div>
+      <div class="gate-rule-line"></div>
+    </div>
+    <p class="gate-date" style="margin-bottom:36px;">Friday 30th April 2027</p>
+    <div class="gate-fields">
+      <input id="gate-input" type="password" placeholder="Enter password" autocomplete="current-password" onkeydown="if(event.key==='Enter')checkGate()"/>
+      <p id="gate-err">Incorrect password. Please try again.</p>
+      <button class="btn" style="width:100%" onclick="checkGate()">Enter</button>
+    </div>
+  </div>
+</div>
 
 <nav id="nav">
   <div class="nav-logo" onclick="goTo('hero')">C &amp; L</div>
@@ -365,6 +436,29 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 <script>
 const SUPABASE_URL='https://rheetkmurbkfzghatznc.supabase.co';
 const SUPABASE_KEY='sb_publishable__lthlX7vu4UDQ6Sv8DmPGw_olrAjtbM';
+
+// ── PASSWORD GATE ────────────────────────────────────────────────
+(function(){
+  const gate = document.getElementById('password-gate');
+  if (sessionStorage.getItem('cl_auth') === '1') {
+    gate.style.display = 'none';
+  }
+})();
+
+function checkGate() {
+  const input = document.getElementById('gate-input');
+  const err = document.getElementById('gate-err');
+  if (input.value === 'giddyup2027') {
+    sessionStorage.setItem('cl_auth', '1');
+    const gate = document.getElementById('password-gate');
+    gate.style.opacity = '0';
+    setTimeout(function(){ gate.style.display = 'none'; }, 400);
+  } else {
+    err.style.display = 'block';
+    input.value = '';
+    input.focus();
+  }
+}
 
 // ── GUEST LISTS ──────────────────────────────────────────────────
 const GUESTS = {

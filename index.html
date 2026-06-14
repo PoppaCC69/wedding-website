@@ -7,7 +7,7 @@
 <meta name="description" content="Join us to celebrate the wedding of Callum &amp; Livvy on 30th April 2027 at The Organ Factory, London E2."/>
 <meta property="og:title" content="Callum &amp; Livvy | 30th April 2027"/>
 <meta property="og:description" content="Join us to celebrate our wedding at The Organ Factory, London E2."/>
-<meta property="og:image" content="https://callumandlivvy.com/hero-centre.jpg"/>
+<meta property="og:image" content="https://callumandlivvy.com/img-1.jpg"/>
 <meta property="og:url" content="https://callumandlivvy.com"/>
 <meta property="og:type" content="website"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FAF6EA'/><text y='72' x='50' text-anchor='middle' font-size='52' font-family='Georgia,serif' fill='%235B7CAE' font-style='italic'>C&L</text></svg>"/>
@@ -38,27 +38,28 @@ nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;backg
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* HERO */
-.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 48px;position:relative;background:var(--cream);}
-.hero-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);}
-.hero-photos{display:flex;gap:2vw;margin-bottom:28px;align-items:flex-end;justify-content:center;width:100%;max-width:420px;}
-.hero-photo{overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.12);}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:0;transition:opacity .6s ease;}
-.hero-photo img.loaded{opacity:1;}
-.story-photo img{opacity:0;transition:opacity .6s ease;display:block;}
-.story-photo img.loaded{opacity:1;}
-.hp-side{width:27%;aspect-ratio:3/4;min-height:120px;}
-.hp-main{width:38%;aspect-ratio:3/4;min-height:160px;}
-.hero-eyebrow{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);margin-bottom:12px;}
-.hero-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(52px,13vw,92px);color:var(--blue);line-height:1;letter-spacing:-.01em;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 48px;position:relative;background:var(--cream);}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.38);}
+.hero-content{position:relative;z-index:1;}
+.hero-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);z-index:2;}
+.hero-eyebrow{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:12px;}
+.hero-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(52px,13vw,92px);color:white;line-height:1;letter-spacing:-.01em;}
 .hero-rule{display:flex;align-items:center;gap:14px;margin:18px 0 12px;}
-.hero-rule-line{height:1px;flex:1;max-width:52px;background:var(--grey-mid);}
-.hero-date-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);}
-.hero-venue-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);margin-bottom:32px;}
+.hero-rule-line{height:1px;flex:1;max-width:52px;background:rgba(255,255,255,.4);}
+.hero-date-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:rgba(255,255,255,.9);}
+.hero-venue-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:32px;}
 .btn{background:var(--blue);color:white;border:none;padding:14px 40px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;display:inline-block;border-radius:8px;}
 .btn:hover{background:#4a6a99;transform:translateY(-1px);}
 .btn:disabled{background:var(--light);cursor:not-allowed;transform:none;}
 .btn-outline{background:transparent;color:var(--blue);border:1px solid var(--grey-mid);padding:12px 28px;font-family:'Jost',sans-serif;font-weight:400;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .25s;border-radius:8px;}
 .btn-outline:hover{border-color:var(--blue);}
+
+/* PHOTO DIVIDERS */
+.photo-divider{width:100%;height:480px;overflow:hidden;position:relative;}
+.photo-divider img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.photo-divider-tall{height:560px;}
 
 /* SECTIONS */
 section{padding:72px 20px;}
@@ -75,10 +76,6 @@ section{padding:72px 20px;}
 .d-value{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;color:var(--charcoal);line-height:1.45;}
 .maps-link{display:inline-block;margin-top:10px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue-light);padding-bottom:2px;}
 .maps-link:hover{border-color:var(--blue);}
-.story-photos{display:flex;gap:0;width:100vw;margin-left:calc(-50vw + 50%);margin-bottom:40px;overflow:hidden;}
-.story-photo{overflow:hidden;flex:1;}
-.story-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-.story-placeholder-box{text-align:center;padding:32px 24px;border:1px dashed var(--grey-mid);background:var(--grey);}
 .story-text{text-align:center;max-width:520px;margin:0 auto;padding:8px 0 0;}
 .story-para{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--mid);margin-bottom:32px;line-height:1.6;}
 .story-timeline{display:flex;flex-direction:column;gap:0;max-width:400px;margin:0 auto;}
@@ -127,9 +124,6 @@ textarea{resize:vertical;}
 .faq-plus.open{transform:rotate(45deg);}
 footer{background:var(--cream);padding:56px 20px;text-align:center;position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
-.full-bleed-photo{width:100%;overflow:hidden;position:relative;}
-.full-bleed-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-.full-bleed-final img{object-position:center 30%;}
 .cd-block{text-align:center;min-width:52px;}
 .cd-num{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,6vw,40px);color:var(--blue);line-height:1;}
 .cd-label{font-family:'Jost',sans-serif;font-weight:300;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-top:4px;}
@@ -141,15 +135,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 @media(min-width:768px){
   nav{padding:0 36px;}
   .hamburger{display:flex;}
-  .hero{min-height:85vh;padding:80px 24px 48px;}
-  .hp-side{width:27%;max-width:170px;}
-  .hp-main{width:38%;max-width:215px;}
-  .hero-photos{gap:20px;max-width:600px;}
   .details-grid{grid-template-columns:1fr 1fr;gap:48px;}
   .travel-grid{grid-template-columns:1fr 1fr;gap:48px;}
   section{padding:88px 24px;}
   .s-inner{max-width:740px;}
   .toggle-row{flex-wrap:nowrap;}
+  .photo-divider{height:560px;}
+  .photo-divider-tall{height:680px;}
 }
 </style>
 </head>
@@ -170,38 +162,34 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </nav>
 
+<!-- HERO: Image 1 -->
 <div class="hero" id="hero">
   <div class="hero-bar"></div>
-  <div class="hero-photos">
-    <div class="hero-photo hp-side">
-      <img src="hero-left.jpg" alt="Callum and Livvy"/>
+  <div class="hero-bg"><img src="img-1.jpg" alt="Callum and Livvy"/></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">You are invited</p>
+    <h1 class="hero-names">Callum &amp; Livvy</h1>
+    <div class="hero-rule">
+      <div class="hero-rule-line"></div>
+      <span class="hero-date-text">Friday 30th April 2027</span>
+      <div class="hero-rule-line"></div>
     </div>
-    <div class="hero-photo hp-main">
-      <img src="hero-centre.jpg" alt="Callum and Livvy"/>
+    <p class="hero-venue-text">The Organ Factory &nbsp;·&nbsp; London E2</p>
+    <div id="countdown" style="display:flex;gap:20px;margin-bottom:28px;justify-content:center;align-items:flex-start;">
+      <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
+      <div class="cd-sep">·</div>
+      <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
+      <div class="cd-sep">·</div>
+      <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Mins</div></div>
+      <div class="cd-sep">·</div>
+      <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Secs</div></div>
     </div>
-    <div class="hero-photo hp-side">
-      <img src="hero-right.jpg" alt="Callum and Livvy"/>
-    </div>
+    <button class="btn" onclick="goTo('rsvp')">RSVP Now</button>
   </div>
-  <p class="hero-eyebrow">You are invited</p>
-  <h1 class="hero-names">Callum &amp; Livvy</h1>
-  <div class="hero-rule">
-    <div class="hero-rule-line"></div>
-    <span class="hero-date-text">Friday 30th April 2027</span>
-    <div class="hero-rule-line"></div>
-  </div>
-  <p class="hero-venue-text">The Organ Factory &nbsp;·&nbsp; London E2</p>
-  <div id="countdown" style="display:flex;gap:20px;margin-bottom:28px;justify-content:center;align-items:flex-start;">
-    <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
-    <div class="cd-sep">·</div>
-    <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
-    <div class="cd-sep">·</div>
-    <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Mins</div></div>
-    <div class="cd-sep">·</div>
-    <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Secs</div></div>
-  </div>
-  <button class="btn" onclick="goTo('rsvp')">RSVP Now</button>
 </div>
+
+<!-- DIVIDER: Image 2 -->
+<div class="photo-divider"><img src="img-2.jpg" alt="Callum and Livvy" style="object-position:center 40%;"/></div>
 
 <section id="details" class="bg-grey">
   <div class="s-inner">
@@ -219,16 +207,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </section>
 
+<!-- DIVIDER: Image 3 -->
+<div class="photo-divider"><img src="img-3.jpg" alt="Callum and Livvy"/></div>
+
 <section id="story" class="bg-white">
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">How It All Began</p><h2 class="sh-title">Our Story</h2><div class="sh-line"></div></div>
-  </div>
-  <div class="story-photos" style="height:340px;">
-    <div class="story-photo"><img src="story-1.jpg" alt="Callum and Livvy"/></div>
-    <div class="story-photo"><img src="story-2.jpg" alt="Callum and Livvy"/></div>
-    <div class="story-photo"><img src="story-3-new.png" alt="Callum and Livvy"/></div>
-  </div>
-  <div class="s-inner">
     <div class="story-text">
       <p class="story-para">It's your classic modern love story.</p>
       <div class="story-timeline">
@@ -239,11 +223,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       </div>
     </div>
   </div>
-  <div class="story-photos story-photos-pair" style="height:420px;margin-top:48px;">
-    <div class="story-photo"><img src="story-dancing.jpg" alt="Callum and Livvy dancing"/></div>
-    <div class="story-photo"><img src="story-bw.jpg" alt="Callum and Livvy" style="object-position:center 20%;"/></div>
-  </div>
 </section>
+
+<!-- DIVIDER: Image 4 -->
+<div class="photo-divider"><img src="img-4.png" alt="Callum and Livvy" style="object-position:center 60%;"/></div>
 
 <section id="schedule" class="bg-grey">
   <div class="s-inner">
@@ -265,6 +248,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </section>
 
+<!-- DIVIDER: Image 5 -->
+<div class="photo-divider"><img src="img-5.jpg" alt="Callum and Livvy" style="object-position:center 20%;"/></div>
+
 <section id="daytwo" class="bg-white">
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">The Morning After</p><h2 class="sh-title">Day Two</h2><div class="sh-line"></div></div>
@@ -275,6 +261,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     </div>
   </div>
 </section>
+
+<!-- DIVIDER: Image 6 -->
+<div class="photo-divider"><img src="img-6.png" alt="Callum and Livvy"/></div>
 
 <section id="rsvp" class="bg-grey">
   <div class="s-inner">
@@ -341,7 +330,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </section>
 
-<div class="full-bleed-photo" style="height:480px;"><img src="full-bleed-rsvp.png" alt="Callum and Livvy"/></div>
+<!-- DIVIDER: Image 7 -->
+<div class="photo-divider"><img src="img-7.jpg" alt="Callum and Livvy"/></div>
 
 <section id="travel" class="bg-white">
   <div class="s-inner">
@@ -354,6 +344,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     </div>
   </div>
 </section>
+
+<!-- DIVIDER: Image 8 -->
+<div class="photo-divider"><img src="img-8.jpg" alt="Callum and Livvy"/></div>
 
 <section id="faqs" class="bg-grey">
   <div class="s-inner">
@@ -375,7 +368,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </section>
 
-<div class="full-bleed-photo full-bleed-final" style="height:560px;"><img src="final-photo.jpg" alt="Callum and Livvy"/></div>
+<!-- FINAL PHOTO: Image 2 (handshake) -->
+<div class="photo-divider photo-divider-tall"><img src="img-2.jpg" alt="Callum and Livvy" style="object-position:center 40%;"/></div>
 
 <footer>
   <p class="ft-names">Callum &amp; Livvy</p>
@@ -387,10 +381,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 const SUPABASE_URL='https://rheetkmurbkfzghatznc.supabase.co';
 const SUPABASE_KEY='sb_publishable__lthlX7vu4UDQ6Sv8DmPGw_olrAjtbM';
 
-// ── GUEST LISTS ──────────────────────────────────────────────────
 const GUESTS = {
   day: [
-    // Callum's side
     "Mick Corley","Nikki Corley","Ewan Corley","Sophie Hayes",
     "Maureen Carswell-Grey","Lenny Carswell","Mark Corley","Marianne",
     "Patrick Corley","Hannah Corley","Sarah Wood","Mark Wood",
@@ -408,7 +400,6 @@ const GUESTS = {
     "Sachin Khunti","Anika Khunti","Kieran McGrath","Jill McGrath",
     "Kiva Talty","Ryan Flynn","Clare Flynn","Connor Wilkins","Connor Wife",
     "Molly Allen","Dave Allen","Tom O'Connor","Emma O'Connor","Lianne Agnew",
-    // Livvy's side
     "David Tilton","Tina Tilton","Alice Tilton","Amma",
     "Harry Tilton","George","Sofia","Scott","Libby",
     "Corrie","Courtney","Rebecka","Chris","Sophie O",
@@ -436,157 +427,89 @@ const GUESTS = {
   ]
 };
 
-// ── ALIASES ──────────────────────────────────────────────────────
 const ALIASES = {
-  "ben watkins": "Benny Watkins",
-  "benny": "Benny Watkins",
-  "ben": "Benny Watkins",
-  "elliot keabl": "Elliot Keable",
-  "elliot keabl e": "Elliot Keable",
-  "harry pathak": "Hari Pathak-Mould",
-  "hari pathak": "Hari Pathak-Mould",
-  "maureen carswell": "Maureen Carswell-Grey",
-  "maureen grey": "Maureen Carswell-Grey",
-  "declan ocallaghan": "Declan O'Callaghan",
-  "declan o callaghan": "Declan O'Callaghan",
-  "tom oconnor": "Tom O'Connor",
-  "tom o connor": "Tom O'Connor",
-  "joe o": "Joe Olszewski",
-  "olszewski": "Joe Olszewski",
-  "matt": "Matt Davies",
-  "mimi": "Mimi Brookes",
-  "billy": "Billy Blair",
-  "sachin": "Sachin Khunti",
-  "anika": "Anika Khunti",
-  "kiva": "Kiva Talty",
-  "rory": "Rory Walkinshaw",
-  "lianne": "Lianne Agnew",
-  "alexis": "Alexis Golden",
-  "molly": "Molly Allen",
-  "dave": "Dave Allen",
-  "david allen": "Dave Allen",
-  "gareth": "Gareth Witcombe",
-  "charlotte witcombe": "Charlotte Witcombe",
-  "bernie": "Bernie Meijer",
-  "ty": "Ty Watson",
-  "ty watson": "Ty Watson",
-  "harry w": "Harry White",
-  "natasha": "Natasha White",
-  "paul": "Paul Andrews",
-  "amy andrew": "Amy Andrew",
-  "mike": "Mike Davies",
-  "henry": "Henry Green",
-  "rebecca green": "Rebecca Green",
-  "maddie": "Maddie Kavanagh",
-  "sienna c": "Sienna Corley",
-  "isla": "Isla Corley",
-  "bella": "Bella Wood",
-  "violet": "Violet Wood",
-  "matilda": "Matilda Wood"
+  "ben watkins":"Benny Watkins","benny":"Benny Watkins","ben":"Benny Watkins",
+  "elliot keabl":"Elliot Keable","harry pathak":"Hari Pathak-Mould","hari pathak":"Hari Pathak-Mould",
+  "maureen carswell":"Maureen Carswell-Grey","maureen grey":"Maureen Carswell-Grey",
+  "declan ocallaghan":"Declan O'Callaghan","declan o callaghan":"Declan O'Callaghan",
+  "tom oconnor":"Tom O'Connor","tom o connor":"Tom O'Connor",
+  "joe o":"Joe Olszewski","olszewski":"Joe Olszewski",
+  "matt":"Matt Davies","mimi":"Mimi Brookes","billy":"Billy Blair",
+  "sachin":"Sachin Khunti","anika":"Anika Khunti","kiva":"Kiva Talty",
+  "rory":"Rory Walkinshaw","lianne":"Lianne Agnew","alexis":"Alexis Golden",
+  "molly":"Molly Allen","dave":"Dave Allen","david allen":"Dave Allen",
+  "gareth":"Gareth Witcombe","bernie":"Bernie Meijer","ty":"Ty Watson",
+  "ty watson":"Ty Watson","harry w":"Harry White","natasha":"Natasha White",
+  "paul":"Paul Andrews","mike":"Mike Davies","henry":"Henry Green",
+  "maddie":"Maddie Kavanagh"
 };
 
 let cGuest=null,att=null,d2=null;
 
-function goTo(id){
-  const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function toggleMenu(){
-  document.getElementById('nav-links').classList.toggle('open');
-  document.getElementById('hamburger').classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('nav-links').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
+function closeMenu(){document.getElementById('nav-links').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
 
-// ── SMART NAME MATCHING ──────────────────────────────────────────
-function findGuest(input) {
-  const n = input.trim().toLowerCase().replace(/\u2019/g,"'");
-  const allGuests = [
-    ...GUESTS.day.map(name => ({name, type:'day'})),
-    ...GUESTS.evening.map(name => ({name, type:'evening'}))
-  ];
-
-  // 1. Exact match
-  const exact = allGuests.find(g => g.name.toLowerCase() === n);
-  if (exact) return exact;
-
-  // 2. Alias lookup
-  const aliasTarget = ALIASES[n];
-  if (aliasTarget) {
-    const aliasMatch = allGuests.find(g => g.name.toLowerCase() === aliasTarget.toLowerCase());
-    if (aliasMatch) return aliasMatch;
-  }
-
-  // 3. Fuzzy: first name starts-with match + optional last name match
-  const parts = n.split(' ').filter(Boolean);
-  const inputFirst = parts[0];
-  const inputLast = parts.length > 1 ? parts[parts.length - 1] : null;
-
-  const fuzzy = allGuests.filter(g => {
-    const gParts = g.name.toLowerCase().split(' ').filter(Boolean);
-    const gFirst = gParts[0];
-    const gLast = gParts.length > 1 ? gParts[gParts.length - 1] : null;
-    const firstMatch = gFirst.startsWith(inputFirst) || inputFirst.startsWith(gFirst);
-    const lastMatch = !inputLast || !gLast || gLast.startsWith(inputLast) || inputLast.startsWith(gLast);
-    return firstMatch && lastMatch;
+function findGuest(input){
+  const n=input.trim().toLowerCase().replace(/\u2019/g,"'");
+  const all=[...GUESTS.day.map(name=>({name,type:'day'})),...GUESTS.evening.map(name=>({name,type:'evening'}))];
+  const exact=all.find(g=>g.name.toLowerCase()===n);
+  if(exact)return exact;
+  const aliasTarget=ALIASES[n];
+  if(aliasTarget){const am=all.find(g=>g.name.toLowerCase()===aliasTarget.toLowerCase());if(am)return am;}
+  const parts=n.split(' ').filter(Boolean);
+  const inputFirst=parts[0];
+  const inputLast=parts.length>1?parts[parts.length-1]:null;
+  const fuzzy=all.filter(g=>{
+    const gParts=g.name.toLowerCase().split(' ').filter(Boolean);
+    const gFirst=gParts[0];
+    const gLast=gParts.length>1?gParts[gParts.length-1]:null;
+    const firstMatch=gFirst.startsWith(inputFirst)||inputFirst.startsWith(gFirst);
+    const lastMatch=!inputLast||!gLast||gLast.startsWith(inputLast)||inputLast.startsWith(gLast);
+    return firstMatch&&lastMatch;
   });
-
-  if (fuzzy.length === 1) return fuzzy[0];
+  if(fuzzy.length===1)return fuzzy[0];
   return null;
 }
 
-async function lookup() {
-  const raw = document.getElementById('name-in').value;
-  const err = document.getElementById('lookup-err');
-  const hint = document.getElementById('lookup-hint');
-  const btn = document.querySelector('#step-lookup .btn');
-  const result = findGuest(raw);
-
-  if (result) {
-    btn.textContent = 'Checking\u2026';
-    btn.disabled = true;
-    err.style.display = 'none';
-    hint.style.display = 'none';
-
-    const alreadyResponded = await checkAlreadyResponded(result.name);
-    btn.textContent = 'Find My RSVP';
-    btn.disabled = false;
-
-    if (alreadyResponded) {
-      cGuest = result;
-      document.getElementById('step-lookup').style.display = 'none';
-      const alreadyNameEl = document.getElementById('already-name');
-      if (alreadyNameEl) alreadyNameEl.textContent = 'We already have your RSVP, ' + result.name + '. Thank you for responding!';
-      document.getElementById('step-already').style.display = 'block';
+async function lookup(){
+  const raw=document.getElementById('name-in').value;
+  const err=document.getElementById('lookup-err');
+  const hint=document.getElementById('lookup-hint');
+  const btn=document.querySelector('#step-lookup .btn');
+  const result=findGuest(raw);
+  if(result){
+    btn.textContent='Checking\u2026';btn.disabled=true;
+    err.style.display='none';hint.style.display='none';
+    const already=await checkAlreadyResponded(result.name);
+    btn.textContent='Find My RSVP';btn.disabled=false;
+    if(already){
+      cGuest=result;
+      document.getElementById('step-lookup').style.display='none';
+      document.getElementById('already-name').textContent='We already have your RSVP, '+result.name+'. Thank you for responding!';
+      document.getElementById('step-already').style.display='block';
     } else {
-      cGuest = result;
-      document.getElementById('step-lookup').style.display = 'none';
-      document.getElementById('welcome-name').textContent = 'Welcome, ' + cGuest.name;
-      const b = document.getElementById('guest-badge');
-      b.textContent = cGuest.type === 'day' ? 'Day Guest' : 'Evening Guest';
-      b.className = 'guest-badge ' + (cGuest.type === 'day' ? 'badge-day' : 'badge-eve');
-      document.getElementById('step-form').style.display = 'block';
+      cGuest=result;
+      document.getElementById('step-lookup').style.display='none';
+      document.getElementById('welcome-name').textContent='Welcome, '+cGuest.name;
+      const b=document.getElementById('guest-badge');
+      b.textContent=cGuest.type==='day'?'Day Guest':'Evening Guest';
+      b.className='guest-badge '+(cGuest.type==='day'?'badge-day':'badge-eve');
+      document.getElementById('step-form').style.display='block';
     }
   } else {
-    err.style.display = 'block';
-    hint.style.display = 'block';
-    hint.textContent = 'Try a different spelling, your first name only, or message Callum or Livvy directly.';
+    err.style.display='block';hint.style.display='block';
+    hint.textContent='Try a different spelling, your first name only, or message Callum or Livvy directly.';
   }
 }
 
-async function checkAlreadyResponded(name) {
-  try {
-    const res = await fetch(
-      SUPABASE_URL + '/rest/v1/rsvps?name=ilike.' + encodeURIComponent(name) + '&select=name',
-      { headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY } }
-    );
-    const data = await res.json();
-    return Array.isArray(data) && data.length > 0;
-  } catch(e) {
-    return false;
-  }
+async function checkAlreadyResponded(name){
+  try{
+    const res=await fetch(SUPABASE_URL+'/rest/v1/rsvps?name=ilike.'+encodeURIComponent(name)+'&select=name',
+      {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY}});
+    const data=await res.json();
+    return Array.isArray(data)&&data.length>0;
+  }catch(e){return false;}
 }
 
 function setAtt(v){
@@ -595,58 +518,39 @@ function setAtt(v){
   document.getElementById('a-no').className='tbtn'+(v==='no'?' on-blue':'');
   const ex=document.getElementById('extras');
   ex.style.display=v==='yes'?'flex':'none';
-  if(v==='yes') ex.style.flexDirection='column';
+  if(v==='yes')ex.style.flexDirection='column';
 }
 
 function setD2(v){
   d2=v;
-  ['yes','maybe','no'].forEach(x=>{
-    document.getElementById('d2-'+x).className='tbtn'+(v===x?' on-dark':'');
-  });
+  ['yes','maybe','no'].forEach(x=>{document.getElementById('d2-'+x).className='tbtn'+(v===x?' on-dark':'');});
 }
 
 async function submitRsvp(){
   if(!att){alert("Please let us know if you'll be attending.");return;}
   const btn=document.getElementById('submit-btn');
   const status=document.getElementById('submit-status');
-  btn.disabled=true;
-  btn.textContent='Submitting\u2026';
-  const payload={
-    name:cGuest.name,
-    guest_type:cGuest.type,
-    attending:att,
+  btn.disabled=true;btn.textContent='Submitting\u2026';
+  const payload={name:cGuest.name,guest_type:cGuest.type,attending:att,
     dietary:document.getElementById('f-diet').value||null,
     allergies:document.getElementById('f-allergy').value||null,
     song_request:document.getElementById('f-song').value||null,
-    day_two:d2||null,
-    note_to_couple:document.getElementById('f-note').value||null
-  };
+    day_two:d2||null,note_to_couple:document.getElementById('f-note').value||null};
   try{
-    const res=await fetch(SUPABASE_URL+'/rest/v1/rsvps',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'apikey':SUPABASE_KEY,
-        'Authorization':'Bearer '+SUPABASE_KEY,
-        'Prefer':'return=minimal'
-      },
-      body:JSON.stringify(payload)
-    });
+    const res=await fetch(SUPABASE_URL+'/rest/v1/rsvps',{method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Prefer':'return=minimal'},
+      body:JSON.stringify(payload)});
     if(res.ok){
       document.getElementById('done-name').textContent='Thank you, '+cGuest.name+'.';
       document.getElementById('done-msg').textContent=att==='yes'
-        ? "We're so excited to celebrate with you. See you on the 30th, it's going to be a night to remember!"
-        : "We'll miss you dearly. Thank you for letting us know. We'll raise a glass to you on the day.";
+        ?"We're so excited to celebrate with you. See you on the 30th, it's going to be a night to remember!"
+        :"We'll miss you dearly. Thank you for letting us know. We'll raise a glass to you on the day.";
       document.getElementById('step-form').style.display='none';
       document.getElementById('step-done').style.display='block';
-    } else {
-      throw new Error();
-    }
-  } catch(e){
-    btn.disabled=false;
-    btn.textContent='Submit RSVP';
-    status.style.display='block';
-    status.style.color='#b05555';
+    } else {throw new Error();}
+  }catch(e){
+    btn.disabled=false;btn.textContent='Submit RSVP';
+    status.style.display='block';status.style.color='#b05555';
     status.textContent='Something went wrong. Please try again or contact us directly.';
   }
 }
@@ -663,45 +567,26 @@ function resetRsvp(){
   document.getElementById('submit-btn').disabled=false;
   document.getElementById('submit-btn').textContent='Submit RSVP';
   document.getElementById('submit-status').style.display='none';
-  const ex=document.getElementById('extras');
-  if(ex) ex.style.display='none';
+  const ex=document.getElementById('extras');if(ex)ex.style.display='none';
 }
 
-// ── COUNTDOWN TIMER ──────────────────────────────────────────────
-function updateCountdown() {
-  const wedding = new Date('2027-04-30T14:00:00');
-  const now = new Date();
-  const diff = wedding - now;
-  if (diff <= 0) {
-    document.getElementById('countdown').innerHTML =
-      '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:22px;color:var(--blue);">Today\'s the day! \uD83C\uDF89</p>';
-    return;
-  }
-  const days  = Math.floor(diff / (1000*60*60*24));
-  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  const mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
-  const secs  = Math.floor((diff % (1000*60)) / 1000);
-  document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
-  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+function updateCountdown(){
+  const wedding=new Date('2027-04-30T14:00:00');
+  const now=new Date();
+  const diff=wedding-now;
+  if(diff<=0){document.getElementById('countdown').innerHTML='<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:22px;color:white;">Today\u0027s the day!</p>';return;}
+  const days=Math.floor(diff/(1000*60*60*24));
+  const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const mins=Math.floor((diff%(1000*60*60))/(1000*60));
+  const secs=Math.floor((diff%(1000*60))/1000);
+  document.getElementById('cd-days').textContent=String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(secs).padStart(2,'0');
 }
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 
-// ── IMAGE FADE-IN ────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.hero-photo img, .story-photo img').forEach(function(img) {
-    if (img.complete && img.naturalHeight !== 0) {
-      img.classList.add('loaded');
-    } else {
-      img.addEventListener('load', function() { img.classList.add('loaded'); });
-      img.addEventListener('error', function() { img.classList.add('loaded'); });
-    }
-  });
-});
-
-// ── FAQ ACCORDION ────────────────────────────────────────────────
 function faq(i){
   const a=document.getElementById('fa'+i);
   const p=document.getElementById('fp'+i);

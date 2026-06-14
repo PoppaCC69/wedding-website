@@ -37,10 +37,10 @@ nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;backg
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* HERO PHOTO ONLY */
-.hero-photo-only{width:100%;height:100vh;position:relative;overflow:hidden;}
+/* HERO PHOTO */
+.hero-photo-only{width:100%;height:100svh;position:relative;overflow:hidden;}
 .hero-photo-only .hero-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);z-index:2;}
-.hero-photo-only img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;}
+.hero-photo-only img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
 
 /* HERO TEXT SECTION */
 .hero-text-section{background:var(--cream);text-align:center;padding:64px 20px 56px;}
@@ -57,9 +57,11 @@ nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;backg
 .btn-outline:hover{border-color:var(--blue);}
 
 /* PHOTO DIVIDERS */
+/* Mobile: natural height, never taller than 75vw (prevents over-zoom on portrait screens) */
+/* Desktop: fixed 520px — tall enough to be impactful, short enough not to distort landscape photos */
 .photo-divider{width:100%;overflow:hidden;position:relative;}
-.photo-divider img{width:100%;height:60vw;max-height:600px;min-height:320px;display:block;object-fit:cover;object-position:center center;}
-.photo-divider-tall img{max-height:700px;}
+.photo-divider img{width:100%;height:75vw;max-height:520px;display:block;object-fit:cover;object-position:center center;}
+.photo-divider-tall img{max-height:600px;}
 
 /* SECTIONS */
 section{padding:72px 20px;}
@@ -141,6 +143,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   .s-inner{max-width:740px;}
   .toggle-row{flex-wrap:nowrap;}
   .hero-text-section{padding:80px 24px 72px;}
+  /* On desktop, lock dividers to a fixed height so landscape photos don't over-zoom */
+  .photo-divider img{height:520px;}
+  .photo-divider-tall img{height:600px;}
 }
 </style>
 </head>
@@ -225,6 +230,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     </div>
   </div>
 </section>
+
+<!-- DIVIDER: after story 2 -->
+<div class="photo-divider"><img src="03b-after-story-2.jpeg" alt="Callum and Livvy" style="object-position:center center;"/></div>
 
 <section id="schedule" class="bg-grey">
   <div class="s-inner">

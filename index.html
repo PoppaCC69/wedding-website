@@ -24,9 +24,8 @@ html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--charcoal);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(250,246,234,.98);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(0,0,0,.05);}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:56px;display:flex;align-items:center;justify-content:flex-start;padding:0 20px;background:rgba(250,246,234,.98);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(0,0,0,.05);}
 nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--grad);}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--blue);cursor:pointer;letter-spacing:.04em;flex-shrink:0;font-weight:500;}
 .nav-links{display:none;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:var(--cream);padding:8px 20px 20px;border-bottom:1px solid var(--grey-mid);box-shadow:0 8px 24px rgba(0,0,0,.07);z-index:299;}
 .nav-links.open{display:flex;}
 .nav-links a{font-family:'Jost',sans-serif;font-weight:400;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);cursor:pointer;padding:14px 8px;border-bottom:1px solid var(--grey);text-decoration:none;display:block;transition:color .2s;}
@@ -38,93 +37,28 @@ nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;backg
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* HERO — full bleed */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:100px 24px 64px;
-  position:relative;
-  background-image:url(hero-centre.jpg);
-  background-size:cover;
-  background-position:center 15%;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(16,24,36,0.48);
-  z-index:1;
-}
-/* vignette for depth */
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.25) 100%);
-  z-index:2;
-  pointer-events:none;
-}
-.hero>*{position:relative;z-index:3;}
-
-.hero-eyebrow{
-  font-family:'Jost',sans-serif;
-  font-weight:400;
-  letter-spacing:.32em;
-  font-size:10px;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.65);
-  margin-bottom:20px;
-}
-.hero-names{
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-weight:400;
-  font-size:clamp(68px,17vw,136px);
-  color:#ffffff;
-  line-height:1;
-  letter-spacing:-.02em;
-  text-shadow:0 2px 40px rgba(0,0,0,0.3);
-  margin-bottom:32px;
-}
-.hero-rule{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
-.hero-rule-line{height:1px;flex:1;max-width:52px;background:rgba(255,255,255,0.25);}
-.hero-date-text{font-family:'Jost',sans-serif;font-weight:400;letter-spacing:.22em;font-size:11px;text-transform:uppercase;color:rgba(255,255,255,0.8);}
-.hero-venue-text{font-family:'Jost',sans-serif;font-weight:300;letter-spacing:.18em;font-size:11px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:40px;}
+/* HERO */
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 48px;position:relative;background:var(--cream);}
+.hero-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);}
+.hero-photos{display:flex;gap:2vw;margin-bottom:28px;align-items:flex-end;justify-content:center;width:100%;max-width:420px;}
+.hero-photo{overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.12);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:0;transition:opacity .6s ease;}
+.hero-photo img.loaded{opacity:1;}
+.story-photo img{opacity:0;transition:opacity .6s ease;display:block;}
+.story-photo img.loaded{opacity:1;}
+.hp-side{width:27%;aspect-ratio:3/4;min-height:120px;}
+.hp-main{width:38%;aspect-ratio:3/4;min-height:160px;}
+.hero-eyebrow{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);margin-bottom:12px;}
+.hero-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(52px,13vw,92px);color:var(--blue);line-height:1;letter-spacing:-.01em;}
+.hero-rule{display:flex;align-items:center;gap:14px;margin:18px 0 12px;}
+.hero-rule-line{height:1px;flex:1;max-width:52px;background:var(--grey-mid);}
+.hero-date-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);}
+.hero-venue-text{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.22em;font-size:12px;text-transform:uppercase;color:var(--charcoal);margin-bottom:32px;}
 .btn{background:var(--blue);color:white;border:none;padding:14px 40px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;display:inline-block;border-radius:8px;}
 .btn:hover{background:#4a6a99;transform:translateY(-1px);}
 .btn:disabled{background:var(--light);cursor:not-allowed;transform:none;}
-.hero .btn{background:transparent;border:1px solid rgba(255,255,255,0.55);color:white;padding:15px 44px;}
-.hero .btn:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8);}
 .btn-outline{background:transparent;color:var(--blue);border:1px solid var(--grey-mid);padding:12px 28px;font-family:'Jost',sans-serif;font-weight:400;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .25s;border-radius:8px;}
 .btn-outline:hover{border-color:var(--blue);}
-
-/* countdown colours on dark hero */
-.cd-block{text-align:center;min-width:52px;}
-.cd-num{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,6vw,40px);color:#ffffff;line-height:1;}
-.cd-label{font-family:'Jost',sans-serif;font-weight:300;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;}
-.cd-sep{font-family:'Cormorant Garamond',serif;font-size:28px;color:rgba(255,255,255,0.22);line-height:1;padding-top:2px;align-self:flex-start;}
-
-/* scroll hint */
-.hero-scroll{
-  position:absolute;
-  bottom:32px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:3;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  opacity:0.5;
-  animation:bounce 2.4s ease-in-out infinite;
-}
-.hero-scroll span{font-family:'Jost',sans-serif;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:white;}
-.hero-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.8),transparent);}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
 
 /* SECTIONS */
 section{padding:72px 20px;}
@@ -141,11 +75,17 @@ section{padding:72px 20px;}
 .d-value{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;color:var(--charcoal);line-height:1.45;}
 .maps-link{display:inline-block;margin-top:10px;font-family:'Jost',sans-serif;font-weight:400;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue-light);padding-bottom:2px;}
 .maps-link:hover{border-color:var(--blue);}
-.story-photos{display:flex;gap:12px;justify-content:center;margin-bottom:28px;flex-wrap:wrap;}
-.story-photo{overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);}
-.story-photo img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity .6s ease;}
-.story-photo img.loaded{opacity:1;}
+.story-photos{display:flex;gap:0;width:100vw;margin-left:calc(-50vw + 50%);margin-bottom:40px;overflow:hidden;}
+.story-photo{overflow:hidden;flex:1;}
+.story-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 .story-placeholder-box{text-align:center;padding:32px 24px;border:1px dashed var(--grey-mid);background:var(--grey);}
+.story-text{text-align:center;max-width:520px;margin:0 auto;padding:8px 0 0;}
+.story-para{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--mid);margin-bottom:32px;line-height:1.6;}
+.story-timeline{display:flex;flex-direction:column;gap:0;max-width:400px;margin:0 auto;}
+.story-trow{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--grey-mid);text-align:left;}
+.story-trow:last-child{border-bottom:none;}
+.story-year{font-family:'Jost',sans-serif;font-weight:400;font-size:12px;letter-spacing:.08em;color:var(--blue);padding-top:2px;}
+.story-beat{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;color:var(--charcoal);line-height:1.35;}
 .timeline{max-width:480px;margin:0 auto;}
 .trow{display:grid;grid-template-columns:60px 1px 1fr;gap:0 18px;align-items:center;padding:15px 0;}
 .trow:not(:last-child){border-bottom:1px solid var(--grey-mid);}
@@ -187,29 +127,35 @@ textarea{resize:vertical;}
 .faq-plus.open{transform:rotate(45deg);}
 footer{background:var(--cream);padding:56px 20px;text-align:center;position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+.full-bleed-photo{width:100%;overflow:hidden;position:relative;}
+.full-bleed-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.full-bleed-final img{object-position:center 30%;}
+.cd-block{text-align:center;min-width:52px;}
+.cd-num{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,6vw,40px);color:var(--blue);line-height:1;}
+.cd-label{font-family:'Jost',sans-serif;font-weight:300;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--light);margin-top:4px;}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--blue-light);line-height:1;padding-top:2px;align-self:flex-start;}
 .ft-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:28px;color:var(--blue);margin-bottom:10px;}
 .ft-date{font-family:'Jost',sans-serif;font-weight:300;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--light);}
 .ft-giddy{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--blue);margin-top:20px;}
 
 @media(min-width:768px){
   nav{padding:0 36px;}
-  .nav-links{display:flex!important;flex-direction:row;position:static;background:transparent;padding:0;border:none;box-shadow:none;gap:4px;}
-  .nav-links a{border-bottom:none;padding:8px 12px;border-radius:2px;}
-  .hamburger{display:none;}
-  .hero{background-attachment:fixed;}
+  .hamburger{display:flex;}
+  .hero{min-height:85vh;padding:80px 24px 48px;}
+  .hp-side{width:27%;max-width:170px;}
+  .hp-main{width:38%;max-width:215px;}
+  .hero-photos{gap:20px;max-width:600px;}
   .details-grid{grid-template-columns:1fr 1fr;gap:48px;}
   .travel-grid{grid-template-columns:1fr 1fr;gap:48px;}
   section{padding:88px 24px;}
   .s-inner{max-width:740px;}
   .toggle-row{flex-wrap:nowrap;}
-  .story-photos .story-photo{width:210px;height:270px;}
 }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <div class="nav-logo" onclick="goTo('hero')">C &amp; L</div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -225,7 +171,19 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 </nav>
 
 <div class="hero" id="hero">
-  <p class="hero-eyebrow">You are invited to the wedding of</p>
+  <div class="hero-bar"></div>
+  <div class="hero-photos">
+    <div class="hero-photo hp-side">
+      <img src="hero-left.jpg" alt="Callum and Livvy"/>
+    </div>
+    <div class="hero-photo hp-main">
+      <img src="hero-centre.jpg" alt="Callum and Livvy"/>
+    </div>
+    <div class="hero-photo hp-side">
+      <img src="hero-right.jpg" alt="Callum and Livvy"/>
+    </div>
+  </div>
+  <p class="hero-eyebrow">You are invited</p>
   <h1 class="hero-names">Callum &amp; Livvy</h1>
   <div class="hero-rule">
     <div class="hero-rule-line"></div>
@@ -233,7 +191,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     <div class="hero-rule-line"></div>
   </div>
   <p class="hero-venue-text">The Organ Factory &nbsp;·&nbsp; London E2</p>
-  <div id="countdown" style="display:flex;gap:20px;margin-bottom:36px;justify-content:center;align-items:flex-start;">
+  <div id="countdown" style="display:flex;gap:20px;margin-bottom:28px;justify-content:center;align-items:flex-start;">
     <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
     <div class="cd-sep">·</div>
     <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
@@ -243,10 +201,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
     <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Secs</div></div>
   </div>
   <button class="btn" onclick="goTo('rsvp')">RSVP Now</button>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
-  </div>
 </div>
 
 <section id="details" class="bg-grey">
@@ -268,14 +222,26 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 <section id="story" class="bg-white">
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">How It All Began</p><h2 class="sh-title">Our Story</h2><div class="sh-line"></div></div>
-    <div class="story-photos">
-      <div class="story-photo" style="width:140px;height:180px;"><img src="story-1.jpg" alt="Callum and Livvy in Malta"/></div>
-      <div class="story-photo" style="width:140px;height:180px;"><img src="story-2.jpg" alt="Callum and Livvy at Bondi Beach"/></div>
-      <div class="story-photo" style="width:140px;height:180px;"><img src="story-3.jpg" alt="Callum and Livvy at desert sunset"/></div>
+  </div>
+  <div class="story-photos" style="height:340px;">
+    <div class="story-photo"><img src="story-1.jpg" alt="Callum and Livvy"/></div>
+    <div class="story-photo"><img src="story-2.jpg" alt="Callum and Livvy"/></div>
+    <div class="story-photo"><img src="story-3-new.png" alt="Callum and Livvy"/></div>
+  </div>
+  <div class="s-inner">
+    <div class="story-text">
+      <p class="story-para">It's your classic modern love story.</p>
+      <div class="story-timeline">
+        <div class="story-trow"><span class="story-year">2011</span><span class="story-beat">18-year-old drunk kiss at a house party.</span></div>
+        <div class="story-trow"><span class="story-year">2012 to 2022</span><span class="story-beat">Occasional Facebook messaging.</span></div>
+        <div class="story-trow"><span class="story-year">2023</span><span class="story-beat">Made it official.</span></div>
+        <div class="story-trow"><span class="story-year">2027</span><span class="story-beat">Married.</span></div>
+      </div>
     </div>
-    <div class="story-placeholder-box">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--light);line-height:1.8;">Your story goes here — we'll write this together when you're ready.</p>
-    </div>
+  </div>
+  <div class="story-photos story-photos-pair" style="height:420px;margin-top:48px;">
+    <div class="story-photo"><img src="story-dancing.jpg" alt="Callum and Livvy dancing"/></div>
+    <div class="story-photo"><img src="story-bw.jpg" alt="Callum and Livvy" style="object-position:center 20%;"/></div>
   </div>
 </section>
 
@@ -318,15 +284,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="sh-line"></div>
     </div>
     <div id="step-lookup" class="rsvp-inner">
-      <p style="font-family:'Jost',sans-serif;font-weight:400;font-size:13px;color:var(--charcoal);line-height:1.85;text-align:center;margin-bottom:6px;letter-spacing:.03em;">Please enter your full name — first and last.</p>
-      <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:var(--light);line-height:1.8;text-align:center;margin-bottom:28px;letter-spacing:.03em;">We're sending invitations via WhatsApp, so just use your name as you'd normally write it. Short names and nicknames usually work too. If you have any trouble, message Callum or Livvy directly.</p>
+      <p style="font-family:'Jost',sans-serif;font-weight:400;font-size:13px;color:var(--charcoal);line-height:1.85;text-align:center;margin-bottom:6px;letter-spacing:.03em;">Please enter your full name, first and last.</p>
+      <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:var(--light);line-height:1.8;text-align:center;margin-bottom:28px;letter-spacing:.03em;">Invites coming at you via WhatsApp. Any issues, let us know!</p>
       <div class="fstack">
         <div>
           <input id="name-in" type="text" placeholder="e.g. James Smith or Jim Smith" onkeydown="if(event.key==='Enter')lookup()"/>
-          <p id="lookup-err" class="rsvp-err">We couldn't find that name — try a different variation, or get in touch with us directly.</p>
+          <p id="lookup-err" class="rsvp-err">We couldn't find that name. Try a different variation, or get in touch with us directly.</p>
           <p id="lookup-hint" class="rsvp-hint"></p>
         </div>
-        <button class="btn" style="width:100%;background:var(--blue);border:none;" onclick="lookup()">Find My RSVP</button>
+        <button class="btn" style="width:100%" onclick="lookup()">Find My RSVP</button>
       </div>
     </div>
     <div id="step-form" class="rsvp-inner" style="display:none;">
@@ -356,7 +322,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
           </div>
         </div>
         <div><label class="f-label">A Note to the Couple</label><textarea id="f-note" rows="4" placeholder="Share a message, a wish, or simply say hello…"></textarea></div>
-        <button class="btn" id="submit-btn" style="width:100%;background:var(--blue);border:none;" onclick="submitRsvp()">Submit RSVP</button>
+        <button class="btn" id="submit-btn" style="width:100%" onclick="submitRsvp()">Submit RSVP</button>
         <p id="submit-status" class="submit-status"></p>
         <button class="btn-outline" style="width:100%;text-align:center;" onclick="resetRsvp()">← Search Again</button>
       </div>
@@ -375,13 +341,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </section>
 
+<div class="full-bleed-photo" style="height:480px;"><img src="full-bleed-rsvp.png" alt="Callum and Livvy"/></div>
+
 <section id="travel" class="bg-white">
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">Getting Here</p><h2 class="sh-title">Travel</h2><div class="sh-line"></div></div>
     <div class="travel-grid">
       <div><p class="tr-label">By Tube</p><p class="tr-text">Bethnal Green (Central line) is a 15-minute walk, a direct and easy journey from anywhere in central London.</p></div>
-      <div><p class="tr-label">By Uber or Cab</p><p class="tr-text">We're right in the heart of East London. Ubers are plentiful all evening and our top recommendation for the journey home after a big night.</p></div>
-      <div><p class="tr-label">By Car</p><p class="tr-text">Leave it at home! Street parking in E2 is limited and you'll enjoy the evening far more without worrying about it.</p></div>
+      <div><p class="tr-label">By Uber or Cab</p><p class="tr-text">We're in the heart of London so Ubers and cabs won't be an issue, but feel free to pre-book to remove the stress.</p></div>
+      <div><p class="tr-label">By Car</p><p class="tr-text">Leave it at home! Street parking is limited so we recommend public transport where possible.</p></div>
       <div><p class="tr-label">The Venue</p><p class="tr-text">The Organ Factory, St Peter's Square, London E2 7AF. Drop this into Google Maps or Citymapper for door-to-door directions.</p></div>
     </div>
   </div>
@@ -391,21 +359,23 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="s-inner">
     <div class="sh"><p class="sh-eye">Good to Know</p><h2 class="sh-title">FAQs</h2><div class="sh-line"></div></div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-btn" onclick="faq(0)"><span class="faq-q">What's the dress code?</span><span class="faq-plus" id="fp0">+</span></button><p class="faq-a" id="fa0">Summer Formal: think elegant, polished and a little bit chic. Linen suits, floral midi dresses, statement accessories. Smart and sophisticated is the vibe.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(1)"><span class="faq-q">Are children welcome?</span><span class="faq-plus" id="fp1">+</span></button><p class="faq-a" id="fa1">We absolutely adore your little ones, but our wedding is an adults-only celebration. We hope this gives you the perfect excuse for a night off. We'll raise a glass to the kids!</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(2)"><span class="faq-q">Are plus ones invited?</span><span class="faq-plus" id="fp2">+</span></button><p class="faq-a" id="fa2">We've kept our guest list intentional and personal. Please check your invitation to see if a plus one is included, and feel free to reach out directly if you're unsure.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(3)"><span class="faq-q">What about gifts?</span><span class="faq-plus" id="fp3">+</span></button><p class="faq-a" id="fa3">Your presence on our day is the greatest gift we could ask for. If you'd like to give something, cash is always gratefully received, but truly, no pressure at all.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(4)"><span class="faq-q">Can I take photos during the ceremony?</span><span class="faq-plus" id="fp4">+</span></button><p class="faq-a" id="fa4">We'd love for you to be fully present during the ceremony: phones away, please! Our photographer will capture every moment. You're very welcome to snap away at the reception.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(5)"><span class="faq-q">What time should I arrive?</span><span class="faq-plus" id="fp5">+</span></button><p class="faq-a" id="fa5">Day guests are welcome from 2:00pm. The ceremony begins at 2:30pm sharp, so please aim to be seated by 2:20pm. Evening guests are welcome from 7:00pm.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(0)"><span class="faq-q">What's the dress code?</span><span class="faq-plus" id="fp0">+</span></button><p class="faq-a" id="fa0">Summer Formal. Save the shorts for Day 2.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(1)"><span class="faq-q">Are children welcome?</span><span class="faq-plus" id="fp1">+</span></button><p class="faq-a" id="fa1">As much as we love your little ones, we're unable to accommodate children with the exception of babies under 12 months. Hopefully this gives you the excuse to let loose!</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(2)"><span class="faq-q">Are plus ones invited?</span><span class="faq-plus" id="fp2">+</span></button><p class="faq-a" id="fa2">We'd love to extend the invite to everyone but we've had to limit the guest list to those specifically named on the invite. Check in with us if you have any questions.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(3)"><span class="faq-q">What about gifts?</span><span class="faq-plus" id="fp3">+</span></button><p class="faq-a" id="fa3">Your presence is your present. If you'd like to give an additional gift, you could make a contribution to our Honeymoon fund, but zero pressure.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(4)"><span class="faq-q">Can I take photos during the ceremony?</span><span class="faq-plus" id="fp4">+</span></button><p class="faq-a" id="fa4">No :)</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(5)"><span class="faq-q">What time should I arrive?</span><span class="faq-plus" id="fp5">+</span></button><p class="faq-a" id="fa5">Day guests to arrive at 2pm. Evening guests are welcome from 7pm.</p></div>
       <div class="faq-item"><button class="faq-btn" onclick="faq(6)"><span class="faq-q">Where should I stay?</span><span class="faq-plus" id="fp6">+</span></button><p class="faq-a" id="fa6">We recommend staying in Bethnal Green or Shoreditch, everything is a short walk or quick Uber from the venue. There are plenty of hotels to choose from, but here are three quick recommendations:<br><br>
         <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);"><a href="https://www.travelodge.co.uk/hotels/588/London-Bethnal-Green-hotel" target="_blank" rel="noopener" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--grey-mid);">Travelodge London Bethnal Green</a></strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 3 star · 3 min walk</span><br>
         <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);"><a href="https://www.citizenm.com/hotels/united-kingdom/london/london-shoreditch-hotel" target="_blank" rel="noopener" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--grey-mid);">citizenM Shoreditch</a></strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 4 star · 10 min walk</span><br>
         <strong style="font-family:'Jost',sans-serif;font-weight:500;color:var(--charcoal);"><a href="https://www.townhallhotel.com" target="_blank" rel="noopener" style="color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--grey-mid);">Town Hall Hotel Bethnal Green</a></strong> <span style="font-family:'Jost',sans-serif;font-weight:300;color:var(--light);">· 5 star · 5 min walk</span></p></div>
       <div class="faq-item"><button class="faq-btn" onclick="faq(7)"><span class="faq-q">Is there parking?</span><span class="faq-plus" id="fp7">+</span></button><p class="faq-a" id="fa7">We'd strongly recommend leaving the car at home. Central London with great tube and Uber links means there's really no need, so enjoy the evening and let someone else do the driving.</p></div>
-      <div class="faq-item"><button class="faq-btn" onclick="faq(8)"><span class="faq-q">How do I get in touch?</span><span class="faq-plus" id="fp8">+</span></button><p class="faq-a" id="fa8">We'd love to hear from you. Reach out to Callum or Livvy directly with any questions and we'll get back to you as soon as we can.</p></div>
+      <div class="faq-item"><button class="faq-btn" onclick="faq(8)"><span class="faq-q">How do I get in touch?</span><span class="faq-plus" id="fp8">+</span></button><p class="faq-a" id="fa8">Reach out to us directly with any Qs.</p></div>
     </div>
   </div>
 </section>
+
+<div class="full-bleed-photo full-bleed-final" style="height:560px;"><img src="final-photo.jpg" alt="Callum and Livvy"/></div>
 
 <footer>
   <p class="ft-names">Callum &amp; Livvy</p>
@@ -704,7 +674,7 @@ function updateCountdown() {
   const diff = wedding - now;
   if (diff <= 0) {
     document.getElementById('countdown').innerHTML =
-      '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:22px;color:#ffffff;">Today\u0027s the day!</p>';
+      '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:22px;color:var(--blue);">Today\'s the day! \uD83C\uDF89</p>';
     return;
   }
   const days  = Math.floor(diff / (1000*60*60*24));
@@ -721,7 +691,7 @@ setInterval(updateCountdown, 1000);
 
 // ── IMAGE FADE-IN ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.story-photo img').forEach(function(img) {
+  document.querySelectorAll('.hero-photo img, .story-photo img').forEach(function(img) {
     if (img.complete && img.naturalHeight !== 0) {
       img.classList.add('loaded');
     } else {
